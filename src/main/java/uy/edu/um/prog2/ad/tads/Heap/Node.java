@@ -1,4 +1,4 @@
-package Heap;
+package uy.edu.um.prog2.ad.tads.Heap;
 
 public class Node <T extends Comparable<T>>{
     public T value;

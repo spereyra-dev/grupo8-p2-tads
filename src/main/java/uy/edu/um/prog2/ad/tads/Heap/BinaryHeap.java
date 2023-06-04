@@ -1,4 +1,4 @@
-package Heap;
+package uy.edu.um.prog2.ad.tads.Heap;
 
 public class BinaryHeap<T extends Comparable<T>> implements Heap<T> {
 
