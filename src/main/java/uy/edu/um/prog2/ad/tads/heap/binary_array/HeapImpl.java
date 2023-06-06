@@ -38,8 +38,13 @@ public class HeapImpl <K extends Comparable<K>, T> implements MyBinarySearchingT
         //Acomodar el nodo según el valor de la key
         subir(heap.size()-1);
     }
+
     @Override
     public void delete(K key) {
+
+    }
+
+    public Node<K,T> deleteAndObtain(K key) {
         //Obtiene y elimina el nodo
         //Buscamos el nodo deseado
         Node<K, T> wanted = findAndRetrieve(key);
@@ -48,16 +53,19 @@ public class HeapImpl <K extends Comparable<K>, T> implements MyBinarySearchingT
         for (int i = 0; i < heap.size(); i++) {
             Node<K, T> node = heap.get(i);
             if (node.key.equals(key)) {
-                wanted = node;
                 indice = i;
             }
         }
         //Verificamos que lo haya encontrado
         if (wanted != null){
-            //Elimino el nodo
+            //Elimino el nodo poniendolo al final
             heap.set(indice,heap.get(heap.size()-1));
+            heap.remove(heap.size()-1);
+            //Acomodamos los nodos
+            bajar(indice);
         }
-        //Acomodamos el nodo
+        return wanted;
+
     }
 
     private void subir(int i){
@@ -70,6 +78,25 @@ public class HeapImpl <K extends Comparable<K>, T> implements MyBinarySearchingT
             i=iParent;
             iParent=(i-1)/2;
         }
+    }
+
+    private void bajar(int i){
+        int iLeft=2*i+1;
+        int iRight=2*i+2;
+        int iMin=i;
+
+        //Si el hijo izquierdo
+        if (iLeft<heap.size() && heap.get(iLeft).key.compareTo(heap.get(iMin).key)<0){
+            iMin=iLeft;
+        }
+        if (iRight<heap.size() && heap.get(iRight).key.compareTo(heap.get(iMin).key)<0){
+            iMin=iRight;
+        }
+        if (iMin!=i){
+            intercambiar(i,iMin);
+            bajar(iMin);
+        }
+
     }
     private void intercambiar(int i,int j){
         //Intercambio de nodos: utilizo un auxiliar para cambiar uno por otro
