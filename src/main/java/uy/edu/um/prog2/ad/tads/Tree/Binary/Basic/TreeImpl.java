@@ -1,4 +1,4 @@
-package uy.edu.um.prog2.ad.tads.Tree;
+package uy.edu.um.prog2.ad.tads.Tree.Binary.Basic;
 
 public class TreeImpl<K extends Comparable<K>, T> implements MyTree<K, T> {
     private Node<K, T> root;

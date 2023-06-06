@@ -1,6 +1,4 @@
-package uy.edu.um.prog2.ad.tads.Stack.Stack;
-
-import uy.edu.um.prog2.ad.tads.Stack.MyStack;
+package uy.edu.um.prog2.ad.tads.Stack;
 
 import java.util.EmptyStackException;
 

@@ -1,10 +1,9 @@
 package uy.edu.um.prog2.ad.tads.Heap;
 
 public class BinaryHeap<T extends Comparable<T>> implements Heap<T> {
-
+    private final boolean isMaxHeap;
     private Node<T> root;
     private int size;
-    private boolean isMaxHeap;
 
     public BinaryHeap(boolean isMaxHeap) {
         this.root = null;
@@ -12,39 +11,22 @@ public class BinaryHeap<T extends Comparable<T>> implements Heap<T> {
         this.isMaxHeap = isMaxHeap;
     }
 
-    public Node<T> getRoot() {
-        return root;
-    }
-
-    public void setRoot(Node<T> root) {
-        this.root = root;
-    }
-
-    public int getSize() {
-        return size;
-    }
-
-    public void setSize(int size) {
-        this.size = size;
-    }
-
-    public boolean isMaxHeap() {
-        return isMaxHeap;
-    }
-
-    public void setMaxHeap(boolean maxHeap) {
-        isMaxHeap = maxHeap;
-    }
-
     private Node<T> findInsertionParent(int index) {
-        String binaryRepresentation = Integer.toBinaryString(index);
-        Node<T> currentNode = root;
-        for (int i = 1; i < binaryRepresentation.length(); i++) {
-            if (binaryRepresentation.charAt(i) == '0') {
-                currentNode = currentNode.left;
-            } else {
+        if (index <= 0) {
+            return root; // Devolver el nodo raíz cuando el índice es menor o igual a 0
+        }
+        int parentIndex = (index - 1) / 2;
+        return findNodeByIndex(root, parentIndex);
+    }
+
+    private Node<T> findNodeByIndex(Node<T> currentNode, int index) {
+        while (index > 0 && currentNode != null) {
+            if (index % 2 == 0) {
                 currentNode = currentNode.right;
+            } else {
+                currentNode = currentNode.left;
             }
+            index = (index - 1) / 2;
         }
         return currentNode;
     }
@@ -69,12 +51,22 @@ public class BinaryHeap<T extends Comparable<T>> implements Heap<T> {
         Node<T> leftChild = currentNode.left;
         Node<T> rightChild = currentNode.right;
 
-        if (leftChild != null && leftChild.value.compareTo(largest.value) > 0) {
-            largest = leftChild;
-        }
+        if (isMaxHeap) {
+            if (leftChild != null && leftChild.value.compareTo(largest.value) > 0) {
+                largest = leftChild;
+            }
 
-        if (rightChild != null && rightChild.value.compareTo(largest.value) > 0) {
-            largest = rightChild;
+            if (rightChild != null && rightChild.value.compareTo(largest.value) > 0) {
+                largest = rightChild;
+            }
+        } else {
+            if (leftChild != null && leftChild.value.compareTo(largest.value) < 0) {
+                largest = leftChild;
+            }
+
+            if (rightChild != null && rightChild.value.compareTo(largest.value) < 0) {
+                largest = rightChild;
+            }
         }
 
         if (largest != currentNode) {
@@ -84,20 +76,22 @@ public class BinaryHeap<T extends Comparable<T>> implements Heap<T> {
     }
 
     private Node<T> findLastNode() {
-        int lastNodeIndex = this.size - 1;
-        String binaryRepresentation = Integer.toBinaryString(lastNodeIndex);
-
+        int index = size - 1;
         Node<T> currentNode = root;
-        for (int i = 1; i < binaryRepresentation.length(); i++) {
-            if (binaryRepresentation.charAt(i) == '0') {
-                currentNode = currentNode.left;
-            } else {
+        while (index > 0 && currentNode != null) {
+            if (index % 2 == 0) {
                 currentNode = currentNode.right;
+            } else {
+                currentNode = currentNode.left;
             }
+            index = (index - 1) / 2;
         }
-
+        if (currentNode == null) {
+            currentNode = root; // El último nodo es el root
+        }
         return currentNode;
     }
+
     public Node<T> findNode(T value) {
         return findNode(root, value);
     }
@@ -112,83 +106,87 @@ public class BinaryHeap<T extends Comparable<T>> implements Heap<T> {
             return leftResult;
         }
 
-        Node<T> rightResult = findNode(currentNode.right, value);
-        if (rightResult != null) {
-            return rightResult;
-        }
-
-        return null;
+        return findNode(currentNode.right, value);
     }
 
     @Override
     public void insert(T element) {
-        Node<T> newNode= new Node<>(element);
-        if (isEmpty()){
-            root=newNode;
-        } else{
-            Node<T> parent = findInsertionParent(size+1);
-            if (parent.left==null){
-                parent.left=newNode;
-            } else{
-                parent.right=newNode;
+        Node<T> newNode = new Node<>(element);
+        if (isEmpty()) {
+            root = newNode;
+        } else {
+            Node<T> parent = findInsertionParent(size);
+            if (parent.left == null) {
+                parent.left = newNode;
+            } else {
+                parent.right = newNode;
             }
-            newNode.parent=parent;
+            newNode.parent = parent;
             siftUp(newNode);
         }
         size++;
-
     }
 
     @Override
-    public T extractLastNode() {
+    public T extractRoot() {
         if (isEmpty()) {
-            throw new IllegalStateException("Heap.Heap is empty");
+            throw new IllegalStateException("Heap is empty");
         }
         T rootValue = root.value;
-        Node<T> lastNode = findLastNode();
-        if (lastNode != root) {
+        if (size == 1) {
+            root = null;
+        } else {
+            Node<T> lastParent = findNodeByIndex(root, (size - 2) / 2);
+            Node<T> lastNode;
+            if (lastParent.right != null) {
+                lastNode = lastParent.right;
+                lastParent.right = null;
+            } else {
+                lastNode = lastParent.left;
+                lastParent.left = null;
+            }
             root.value = lastNode.value;
             siftDown(root);
         }
-        if (lastNode.parent != null) {
-            if (lastNode.parent.left == lastNode) {
-                lastNode.parent.left = null;
-            } else {
-                lastNode.parent.right = null;
-            }
-        }
-        size--;
+        size--; // Decrementar el tamaño antes de extraer la raíz
         return rootValue;
-
     }
+
     @Override
-    public T extractValue(T value){
+    public T extractValue(T value) {
         Node<T> node = findNode(value);
         if (node != null) {
             T extractedValue = node.value;
             deleteNode(node);
+            if (size == 0) {
+                root = null; // Establecer root en null si el árbol está vacío
+            }
             return extractedValue;
         }
         return null;
     }
 
     private void deleteNode(Node<T> node) {
-        T lastValue = findLastNode().value;
-        node.value = lastValue;
-        siftUp(node);
-        siftDown(node);
+        if (node == root) {
+            extractRoot();
+        } else {
+            node.value = findLastNode().value;
+            siftUp(node);
+            siftDown(node);
+        }
     }
+
     @Override
     public T peek() {
-        if (isEmpty()){
-            throw new IllegalStateException("Está vacío");
+        if (isEmpty()) {
+            throw new IllegalStateException("Heap is empty");
         }
-        return root.value;
+        return root != null ? root.value : null;
     }
 
     @Override
     public boolean isEmpty() {
-        return size==0;
+        return size == 0;
     }
 
     @Override

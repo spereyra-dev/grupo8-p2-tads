@@ -4,8 +4,49 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c26d4427-b256-4c65-92af-689a14fbd6e9" name="Changes" comment="">
+    <list default="true" id="c26d4427-b256-4c65-92af-689a14fbd6e9" name="Changes" comment="Implemented Binary Heap with Array&#10;Changed Binary Heap with Node&#10;Moved tests to test folder">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/uy/edu/um/prog2/ad/tads/Hash/HashNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/uy/edu/um/prog2/ad/tads/Hash/HashTable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/uy/edu/um/prog2/ad/tads/Hash/LinkedList/HashLinkedList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/uy/edu/um/prog2/ad/tads/Hash/Table/MyHashTable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/uy/edu/um/prog2/ad/tads/Heap/ArrayHeap/EmptyTreeException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/uy/edu/um/prog2/ad/tads/Heap/ArrayHeap/FullHeapException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/uy/edu/um/prog2/ad/tads/Heap/ArrayHeap/MyHeap.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/uy/edu/um/prog2/ad/tads/Heap/ArrayHeap/MyHeapImp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/uy/edu/um/prog2/ad/tads/Hash/HashLinkedListTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/uy/edu/um/prog2/ad/tads/Hash/MyHashTableTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/uy/edu/um/prog2/ad/tads/Heap/ArrayHeap/MyHeapImpTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/uy/edu/um/prog2/ad/tads/Heap/BinaryHeapTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/uy/edu/um/prog2/ad/tads/LinkedList/CircularLinkedList/CircularLinkedListTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/uy/edu/um/prog2/ad/tads/LinkedList/DoublyLinkedList/DoublyLinkedListTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/uy/edu/um/prog2/ad/tads/LinkedList/LinkedList/LinkedListTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/uy/edu/um/prog2/ad/tads/Queue/DoubleQueue/DoubleQueueTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/uy/edu/um/prog2/ad/tads/Queue/LinkedQueue/QueueTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/uy/edu/um/prog2/ad/tads/Queue/PriorityQueue/PriorityQueueTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/uy/edu/um/prog2/ad/tads/Stack/StackTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/uy/edu/um/prog2/ad/tads/Tree/Binary/Basic/TreeImplTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uy/edu/um/prog2/ad/CsvUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uy/edu/um/prog2/ad/CsvUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uy/edu/um/prog2/ad/tads/Heap/BinaryHeap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uy/edu/um/prog2/ad/tads/Heap/BinaryHeap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uy/edu/um/prog2/ad/tads/Heap/Heap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uy/edu/um/prog2/ad/tads/Heap/Heap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uy/edu/um/prog2/ad/tads/Heap/IlegalStateException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uy/edu/um/prog2/ad/tads/Heap/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uy/edu/um/prog2/ad/tads/Heap/Node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uy/edu/um/prog2/ad/tads/LinkedList/CircularLinkedList/CircularLinkedListTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uy/edu/um/prog2/ad/tads/LinkedList/DoublyLinkedList/DoublyLinkedListTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uy/edu/um/prog2/ad/tads/LinkedList/LinkedList/LinkedListTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uy/edu/um/prog2/ad/tads/Queue/DoubleQueue/DoubleQueueTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uy/edu/um/prog2/ad/tads/Queue/LinkedQueue/QueueTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uy/edu/um/prog2/ad/tads/Queue/PriorityQueue/PriorityQueueTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uy/edu/um/prog2/ad/tads/Stack/Stack/Nodo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uy/edu/um/prog2/ad/tads/Stack/Nodo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uy/edu/um/prog2/ad/tads/Stack/Stack/Stack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uy/edu/um/prog2/ad/tads/Stack/Stack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uy/edu/um/prog2/ad/tads/Stack/Stack/StackArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uy/edu/um/prog2/ad/tads/Stack/StackArray.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uy/edu/um/prog2/ad/tads/Stack/Stack/StackArrayTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uy/edu/um/prog2/ad/tads/Stack/StackArrayTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uy/edu/um/prog2/ad/tads/Tree/MyTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uy/edu/um/prog2/ad/tads/Tree/Binary/Basic/MyTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uy/edu/um/prog2/ad/tads/Tree/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uy/edu/um/prog2/ad/tads/Tree/Binary/Basic/Node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uy/edu/um/prog2/ad/tads/Tree/TreeImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uy/edu/um/prog2/ad/tads/Tree/Binary/Basic/TreeImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uy/edu/um/prog2/ad/tads/Tree/TreeImplTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/AppTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,12 +58,12 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -35,73 +76,133 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.Java&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.sourceCode.Java",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;sqlite&quot;,
-      &quot;h2&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "sqlite",
+      "h2"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="uy.edu.um.prog2.ad.tads.clari" />
       <recent name="uy.edu.um.prog2.ad" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/java" />
     </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="uy.edu.um.prog2.ad.tads.Stack" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="uy.edu.um.prog2.ad.tads.Stack" />
+      <recent name="uy.edu.um.prog2.ad.tads.Tree.Binary.Basic" />
+      <recent name="uy.edu.um.prog2.ad.tads.Tree" />
+      <recent name="uy.edu.um.prog2.ad.tads.Stack.Stack" />
+      <recent name="uy.edu.um.prog2.ad.tads.Queue.DoubleQueue" />
+    </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="uy.edu.um.prog2.ad.Main" />
+  <component name="RunManager" selected="JUnit.TreeImplTest">
+    <configuration name="MyHeapImpTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Entregable" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="uy.edu.um.prog2.ad.*" />
+          <option name="PATTERN" value="uy.edu.um.prog2.ad.tads.Heap.ArrayHeap.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="uy.edu.um.prog2.ad.tads.Heap.ArrayHeap" />
+      <option name="MAIN_CLASS_NAME" value="uy.edu.um.prog2.ad.tads.Heap.ArrayHeap.MyHeapImpTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LinkedListTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="StackTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Entregable" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="uy.edu.um.prog2.ad.tads.LinkedList.LinkedList.*" />
+          <option name="PATTERN" value="uy.edu.um.prog2.ad.tads.Stack.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="uy.edu.um.prog2.ad.tads.LinkedList.LinkedList" />
-      <option name="MAIN_CLASS_NAME" value="uy.edu.um.prog2.ad.tads.LinkedList.LinkedList.LinkedListTest" />
+      <option name="PACKAGE_NAME" value="uy.edu.um.prog2.ad.tads.Stack" />
+      <option name="MAIN_CLASS_NAME" value="uy.edu.um.prog2.ad.tads.Stack.StackTest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TreeImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Entregable" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="uy.edu.um.prog2.ad.tads.Tree.Binary.Basic.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="uy.edu.um.prog2.ad.tads.Tree.Binary.Basic" />
+      <option name="MAIN_CLASS_NAME" value="uy.edu.um.prog2.ad.tads.Tree.Binary.Basic.TreeImplTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TreeImplTest.testDeleteNodeWithTwoChildren" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Entregable" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="uy.edu.um.prog2.ad.tads.Tree.Binary.Basic.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="uy.edu.um.prog2.ad.tads.Tree.Binary.Basic" />
+      <option name="MAIN_CLASS_NAME" value="uy.edu.um.prog2.ad.tads.Tree.Binary.Basic.TreeImplTest" />
+      <option name="METHOD_NAME" value="testDeleteNodeWithTwoChildren" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="java in Entregable" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Entregable" />
+      <option name="TEST_OBJECT" value="directory" />
+      <dir value="$PROJECT_DIR$/src/test/java" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.LinkedListTest" />
+        <item itemvalue="JUnit.TreeImplTest" />
+        <item itemvalue="JUnit.TreeImplTest.testDeleteNodeWithTwoChildren" />
+        <item itemvalue="JUnit.StackTest" />
+        <item itemvalue="JUnit.java in Entregable" />
+        <item itemvalue="JUnit.MyHeapImpTest" />
       </list>
     </recent_temporary>
   </component>
@@ -142,20 +243,31 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="First commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="First commit" />
+    <MESSAGE value="Implemented Binary Heap with Array&#10;Changed Binary Heap with Node&#10;Moved tests to test folder" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented Binary Heap with Array&#10;Changed Binary Heap with Node&#10;Moved tests to test folder" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/uy/edu/um/prog2/ad/CsvUtils.java</url>
-          <line>106</line>
+          <line>105</line>
           <option name="timeStamp" value="59" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/uy/edu/um/prog2/ad/CsvUtils.java</url>
-          <line>78</line>
-          <option name="timeStamp" value="60" />
+          <url>file://$PROJECT_DIR$/src/main/java/uy/edu/um/prog2/ad/tads/Heap/BinaryHeap.java</url>
+          <line>116</line>
+          <option name="timeStamp" value="69" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/uy/edu/um/prog2/ad/tads/Heap/BinaryHeapTest.java</url>
+          <line>148</line>
+          <option name="timeStamp" value="73" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/uy/edu/um/prog2/ad/tads/Heap/BinaryHeapTest.java</url>
+          <line>72</line>
+          <option name="timeStamp" value="77" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

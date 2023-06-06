@@ -1,9 +1,9 @@
-package uy.edu.um.prog2.ad.tads.Stack.Stack;
+package uy.edu.um.prog2.ad.tads.Stack;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -33,9 +33,7 @@ class StackArrayTest {
         stack.push(2);
         stack.push(3);
 
-        assertThrows(StackOverflowError.class, () -> {
-            stack.push(4);
-        });
+        assertThrows(StackOverflowError.class, () -> stack.push(4));
     }
 
     @Test
@@ -50,9 +48,7 @@ class StackArrayTest {
 
     @Test
     void testPopEmpty() {
-        assertThrows(EmptyStackException.class, () -> {
-            stack.pop();
-        });
+        assertThrows(EmptyStackException.class, () -> stack.pop());
     }
 
     @Test
@@ -66,9 +62,7 @@ class StackArrayTest {
 
     @Test
     void testTopEmpty() {
-        assertThrows(EmptyStackException.class, () -> {
-            stack.top();
-        });
+        assertThrows(EmptyStackException.class, () -> stack.top());
     }
 
     @Test
@@ -95,9 +89,7 @@ class StackArrayTest {
         stack.push(1);
         stack.push(2);
         stack.push(3);
-        assertThrows(StackOverflowError.class, () -> {
-            stack.push(4);
-        });
+        assertThrows(StackOverflowError.class, () -> stack.push(4));
     }
 
 }

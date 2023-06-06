@@ -1,4 +1,4 @@
-package uy.edu.um.prog2.ad.tads.Stack.Stack;
+package uy.edu.um.prog2.ad.tads.Stack;
 
 public class Nodo<T> {
     private T value;

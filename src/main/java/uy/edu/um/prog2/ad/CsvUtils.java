@@ -12,7 +12,6 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.time.format.DateTimeParseException;
 import java.util.Arrays;
 
 /**
@@ -114,7 +113,7 @@ public class CsvUtils {
                         userLinkedList.get(i).incrementTweetCount(); // Incrementar la cantidad de tweets del usuario existente
                     }
 
-                } catch (DateTimeParseException ignored) {
+                } catch (Exception ignored) {
                 }
             }
         } catch (IOException e) {

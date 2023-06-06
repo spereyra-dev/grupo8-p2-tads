@@ -47,8 +47,6 @@ class PriorityQueueTest {
 
     @Test
     public void testDequeueEmptyQueue() {
-        assertThrows(EmptyQueueException.class, () -> {
-            priorityQueue.dequeue();
-        });
+        assertThrows(EmptyQueueException.class, () -> priorityQueue.dequeue());
     }
 }
