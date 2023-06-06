@@ -1,6 +1,8 @@
-package uy.edu.um.prog2.ad.tads.tree.binary.search;
+package uy.edu.um.prog2.ad.tads.Tree.binary.Search;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import org.junit.jupiter.api.Test;
+import uy.edu.um.prog2.ad.tads.tree.binary.search.BinarySearchingTreeImpl;
+import uy.edu.um.prog2.ad.tads.tree.binary.search.MyBinarySearchingTree;
 
 public class BSTImplTest {
     MyBinarySearchingTree<Integer,String> bst = new BinarySearchingTreeImpl<>();
