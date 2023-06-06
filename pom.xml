@@ -63,11 +63,6 @@
       <version>2.2</version>
     </dependency>
     <dependency>
-      <groupId>com.opencsv</groupId>
-      <artifactId>opencsv</artifactId>
-      <version>5.7.1</version>
-    </dependency>
-    <dependency>
       <groupId>org.testng</groupId>
       <artifactId>testng</artifactId>
       <version>RELEASE</version>
@@ -83,18 +78,7 @@
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>4.4</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.4</version>
       <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.h2database</groupId>
-      <artifactId>h2</artifactId>
-      <version>1.4.200</version>
     </dependency>
 
   </dependencies>

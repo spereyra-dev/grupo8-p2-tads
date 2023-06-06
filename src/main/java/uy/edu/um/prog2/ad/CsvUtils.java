@@ -3,8 +3,8 @@ package uy.edu.um.prog2.ad;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
-import uy.edu.um.prog2.ad.tads.LinkedList.LinkedList.LinkedList;
-import uy.edu.um.prog2.ad.tads.LinkedList.ListaConGenerics;
+import uy.edu.um.prog2.ad.tads.linked_list.simple.LinkedList;
+import uy.edu.um.prog2.ad.tads.linked_list.ListaConGenerics;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
