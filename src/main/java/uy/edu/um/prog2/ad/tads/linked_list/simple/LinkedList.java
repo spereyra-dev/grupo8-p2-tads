@@ -78,6 +78,18 @@ public class LinkedList<T> implements ListaConGenerics<T> {
     }
 
     @Override
+    public T get(T value) {
+        Nodo<T> current = this.head;
+        while (current != null) {
+            if (current.value.equals(value)) {
+                return current.value;
+            }
+            current = current.next;
+        }
+        return null;
+    }
+
+    @Override
     public boolean contains(T value) {
         Nodo<T> current = this.head;
         while (current != null) {

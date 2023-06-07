@@ -56,7 +56,7 @@ public class MyHashTable<K, V> implements HashTable<K, V> {
     @Override
     public V get(K key) {
         int code = hashCode(key);
-        return buckets[code].get(key);
+        return buckets[code].getValue(key);
     }
 
 

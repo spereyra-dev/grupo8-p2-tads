@@ -27,6 +27,7 @@ public class User {
 
     public User() {
         this.tweets = new LinkedList<>();
+        tweetCount = 0;
     }
 
     @Override

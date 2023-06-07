@@ -153,6 +153,12 @@ public class CircularLinkedList<T extends Comparable<T>> implements ListaConGene
     }
 
     @Override
+    public T get(T value) {
+        //no implementado
+        return null;
+    }
+
+    @Override
     public boolean contains(T value) {
         Nodo<T> current = this.first;
         while (current != null) {
