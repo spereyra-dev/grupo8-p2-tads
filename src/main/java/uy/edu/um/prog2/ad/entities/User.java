@@ -1,13 +1,12 @@
-package uy.edu.um.prog2.ad;
-
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
-import uy.edu.um.prog2.ad.tads.linked_list.simple.LinkedList;
-import uy.edu.um.prog2.ad.tads.linked_list.ListaConGenerics;
+package uy.edu.um.prog2.ad.entities;
 
 import java.time.LocalDateTime;
 import java.util.Objects;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
+import uy.edu.um.prog2.ad.tads.linked_list.ListaConGenerics;
+import uy.edu.um.prog2.ad.tads.linked_list.simple.LinkedList;
 
 @Getter
 @Setter

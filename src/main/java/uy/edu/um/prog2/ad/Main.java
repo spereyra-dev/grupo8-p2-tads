@@ -2,6 +2,7 @@ package uy.edu.um.prog2.ad;
 
 
 import static uy.edu.um.prog2.ad.CsvUtils.differentHashTagsForADay;
+import static uy.edu.um.prog2.ad.CsvUtils.getTopTenPilots;
 import static uy.edu.um.prog2.ad.CsvUtils.mostUsedHashTagForADay;
 import static uy.edu.um.prog2.ad.CsvUtils.top15UsersWithMoreTweets;
 import static uy.edu.um.prog2.ad.CsvUtils.top7UsersWithMoreFavourites;
@@ -52,7 +53,9 @@ public class Main {
     private static void generarReporte1() {
         // Código para generar el Reporte 1
         System.out.println("Generando Reporte 1...");
-
+        int month = 11;
+        int year = 2021;
+        getTopTenPilots(month, year);
     }
 
     private static void generarReporte2() {

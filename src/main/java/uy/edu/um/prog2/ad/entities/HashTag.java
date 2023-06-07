@@ -1,4 +1,4 @@
-package uy.edu.um.prog2.ad;
+package uy.edu.um.prog2.ad.entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

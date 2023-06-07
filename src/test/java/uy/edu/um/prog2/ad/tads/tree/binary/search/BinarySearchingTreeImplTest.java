@@ -2,6 +2,7 @@ package uy.edu.um.prog2.ad.tads.tree.binary.search;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
+
 import org.junit.jupiter.api.Test;
 
 class BinarySearchingTreeImplTest {
@@ -46,5 +47,14 @@ class BinarySearchingTreeImplTest {
         assertEquals("C", bst.find(70)); // El hijo derecho del nodo eliminado se convierte en hijo derecho del nuevo nodo raíz
     }
 
+    @Test
+    void testTreeString() {
+        MyBinarySearchingTree<String, Integer> bst = new BinarySearchingTreeImpl<>();
+        bst.insert("A", 1);
+        bst.insert("B", 2);
+        bst.insert("C", 3);
+        bst.insert("D", 4);
+        assertEquals(3, bst.find("C"));
+    }
 
 }

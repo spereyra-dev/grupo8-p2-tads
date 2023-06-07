@@ -1,5 +1,7 @@
 package uy.edu.um.prog2.ad.tads.hash.table;
 
+import java.util.Enumeration;
+import java.util.NoSuchElementException;
 import uy.edu.um.prog2.ad.tads.hash.HashNode;
 import uy.edu.um.prog2.ad.tads.hash.HashTable;
 import uy.edu.um.prog2.ad.tads.hash.linked_list.HashLinkedList;
@@ -18,7 +20,7 @@ public class MyHashTable<K, V> implements HashTable<K, V> {
     }
 
     public MyHashTable() {
-        this(10); // Tamaño predeterminado de 10
+        this(1000); // Tamaño predeterminado de 10
     }
 
     public int hashCode(K key) {
@@ -63,8 +65,8 @@ public class MyHashTable<K, V> implements HashTable<K, V> {
     @Override
     public void remove(K key) {
         int code = hashCode(key);
-        HashNode<K, V> cleannode = buckets[code].getNode(key);
-        buckets[code].remove(cleannode);
+        HashNode<K, V> cleanNode = buckets[code].getNode(key);
+        buckets[code].remove(cleanNode);
     }
 
     @Override
@@ -79,5 +81,60 @@ public class MyHashTable<K, V> implements HashTable<K, V> {
     @Override
     public boolean isEmpty() {
         return size() == 0;
+    }
+
+    @Override
+    public V getOrDefault(K key, V defaultValue) {
+        if (contains(key)) {
+            return get(key);
+        } else {
+            return defaultValue;
+        }
+    }
+
+    @Override
+    public Enumeration<K> keys() {
+        return new Enumeration<>() {
+            int currentBucket = 0;
+            HashNode<K, V> currentNode = buckets[currentBucket].getFirst();
+
+            @Override
+            public boolean hasMoreElements() {
+                // Check if there are more elements in the current bucket
+                if (currentNode != null) {
+                    return true;
+                }
+                // Check if there are more buckets
+                while (currentBucket < size - 1) {
+                    currentBucket++;
+                    currentNode = buckets[currentBucket].getFirst();
+                    if (currentNode != null) {
+                        return true;
+                    }
+                }
+                return false;
+            }
+
+            @Override
+            public K nextElement() {
+                if (!hasMoreElements()) {
+                    throw new NoSuchElementException();
+                }
+                K key = currentNode.getKey();
+                // Move to the next node in the current bucket
+                currentNode = currentNode.getNext();
+                // Check if we need to move to the next bucket
+                if (currentNode == null) {
+                    while (currentBucket < size - 1) {
+                        currentBucket++;
+                        currentNode = buckets[currentBucket].getFirst();
+                        if (currentNode != null) {
+                            break;
+                        }
+                    }
+                }
+                return key;
+            }
+        };
     }
 }
