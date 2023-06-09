@@ -2,25 +2,25 @@ package uy.edu.um.prog2.ad.tads.heap.array_heap;
 
 public class MyHeapImp<T extends Comparable<T>> implements MyHeap<T> {
 
-    private static final int INITIAL_CAPACITY = 10; // Maximum initial size
+    private static final int DEFAULT_CAPACITY = 10; // Maximum initial size
     private final boolean isMax; // True if it's a max heap, False if it's a min heap
     private final T[] array;
     private int size;
 
     public MyHeapImp(boolean isMax) {
-        this.array = (T[]) new Comparable[INITIAL_CAPACITY];
+        this.array = (T[]) new Comparable[DEFAULT_CAPACITY];
+        this.size = 0;
+        this.isMax = isMax;
+    }
+
+    public MyHeapImp(boolean isMax, int initialCapacity) {
+        this.array = (T[]) new Comparable[initialCapacity];
         this.size = 0;
         this.isMax = isMax;
     }
 
 // The children of i are at 2i+1 and 2i+2
 // The parent of i is at (i-1)/2
-
-    /**
-     * This method adds a new element to the Heap
-     *
-     * @param element the element to be added. Accepts Generics
-     */
     @Override
     public void add(T element) throws FullHeapException {
         if (element != null) {
@@ -65,12 +65,6 @@ public class MyHeapImp<T extends Comparable<T>> implements MyHeap<T> {
         }
     }
 
-    /**
-     * This method retrieves and removes the maximum or minimum element from the heap
-     * and reorganizes the heap
-     *
-     * @return the maximum or minimum element depending on whether it's a max or min heap.
-     */
     @Override
     public T retrieveAndRemove() throws EmptyTreeException {
         if (this.size == 0) {

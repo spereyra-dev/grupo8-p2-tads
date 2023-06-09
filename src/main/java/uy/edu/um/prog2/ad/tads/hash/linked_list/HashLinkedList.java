@@ -64,6 +64,12 @@ public class HashLinkedList<K, V> implements ListaConGenerics<HashNode<K, V>> {
     }
 
     @Override
+    public HashNode<K, V> get(HashNode<K, V> value) {
+        //no implementado
+        return null;
+    }
+
+    @Override
     public boolean contains(HashNode<K, V> value) {
         HashNode<K, V> current = first;
         while (current != null) {
@@ -75,7 +81,7 @@ public class HashLinkedList<K, V> implements ListaConGenerics<HashNode<K, V>> {
         return false;
     }
 
-    public V get(K key) {
+    public V getValue(K key) {
         HashNode<K, V> current = first;
         while (current != null) {
             if (current.getKey().equals(key)) {

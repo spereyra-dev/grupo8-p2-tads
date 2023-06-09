@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.Test;
 
 class TreeImplTest {
-    MyTree<Integer, String> tree = new TreeImpl<>();
+    uy.edu.um.prog2.ad.tads.tree.binary.basic.MyTree<Integer, String> tree = new uy.edu.um.prog2.ad.tads.tree.binary.basic.TreeImpl<>();
 
     @Test
     void insert() {

@@ -5,9 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="97f2e755-051c-4c44-82d7-aa6c0df09525" name="Changes" comment="listo">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uy/edu/um/prog2/ad/CsvUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uy/edu/um/prog2/ad/CsvUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uy/edu/um/prog2/ad/EntregableImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uy/edu/um/prog2/ad/FileNotValidException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uy/edu/um/prog2/ad/exception/FileNotValidException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uy/edu/um/prog2/ad/HashTag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uy/edu/um/prog2/ad/entities/HashTag.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uy/edu/um/prog2/ad/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uy/edu/um/prog2/ad/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uy/edu/um/prog2/ad/Tweet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uy/edu/um/prog2/ad/entities/Tweet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uy/edu/um/prog2/ad/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uy/edu/um/prog2/ad/entities/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uy/edu/um/prog2/ad/tads/Tree/binary/Basic/MyTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uy/edu/um/prog2/ad/tads/Tree/binary/basic/MyTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uy/edu/um/prog2/ad/tads/Tree/binary/Basic/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uy/edu/um/prog2/ad/tads/Tree/binary/basic/Node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uy/edu/um/prog2/ad/tads/Tree/binary/Basic/TreeImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uy/edu/um/prog2/ad/tads/Tree/binary/basic/TreeImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uy/edu/um/prog2/ad/tads/Tree/binary/Search/BSTImplTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uy/edu/um/prog2/ad/tads/Tree/binary/Search/BinarySearchingTreeImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uy/edu/um/prog2/ad/tads/Tree/binary/search/BinarySearchingTreeImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uy/edu/um/prog2/ad/tads/Tree/binary/Search/MyBinarySearchingTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uy/edu/um/prog2/ad/tads/Tree/binary/search/MyBinarySearchingTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uy/edu/um/prog2/ad/tads/Tree/binary/Search/NodeBST.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uy/edu/um/prog2/ad/tads/Tree/binary/search/NodeBST.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uy/edu/um/prog2/ad/tads/hash/HashTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uy/edu/um/prog2/ad/tads/hash/HashTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uy/edu/um/prog2/ad/tads/hash/table/MyHashTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uy/edu/um/prog2/ad/tads/hash/table/MyHashTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uy/edu/um/prog2/ad/tads/heap/array_heap/EmptyTreeException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uy/edu/um/prog2/ad/tads/heap/array_heap/EmptyTreeException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uy/edu/um/prog2/ad/tads/heap/array_heap/FullHeapException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uy/edu/um/prog2/ad/tads/heap/array_heap/FullHeapException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/uy/edu/um/prog2/ad/tads/tree/binary/search/BinarySearchingTreeImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/uy/edu/um/prog2/ad/tads/tree/binary/search/BinarySearchingTreeImplTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,14 +35,13 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="JUnit5 Test Class" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -61,8 +77,9 @@
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;last_directory_selection&quot;: &quot;/Users/santiagopereyra/Documents/Entregable/src/test/java/uy/edu/um/prog2/ad/tads/Tree/binary&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Asus/grupo8-p2-tads&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/santiagopereyra/Documents/Entregable&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -72,7 +89,7 @@
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.Java&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;e29d82483828861a6e539547a43fb642&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;7397f1eff18a9cf1515e2fcb78f89c32&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -100,40 +117,21 @@
       <recent name="uy.edu.um.prog2.ad.tads.heap.binary_array" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.HeapImplTest.deleteTest">
-    <configuration name="BSTImplTest.deleteTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="uy.edu.um.prog2.ad.Main" />
       <module name="Entregable" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="uy.edu.um.prog2.ad.tads.Tree.binary.Search.*" />
+          <option name="PATTERN" value="uy.edu.um.prog2.ad.entities.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="uy.edu.um.prog2.ad.tads.Tree.Binary.Search" />
-      <option name="MAIN_CLASS_NAME" value="uy.edu.um.prog2.ad.tads.Tree.binary.Search.BSTImplTest" />
-      <option name="METHOD_NAME" value="deleteTest" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BSTImplTest.find" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Entregable" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="uy.edu.um.prog2.ad.tads.Tree.binary.Search.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="uy.edu.um.prog2.ad.tads.Tree.Binary.Search" />
-      <option name="MAIN_CLASS_NAME" value="uy.edu.um.prog2.ad.tads.Tree.binary.Search.BSTImplTest" />
-      <option name="METHOD_NAME" value="find" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BinarySearchingTreeImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BinarySearchingTreeImplTest.testInsertAndFind" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Entregable" />
       <extension name="coverage">
         <pattern>
@@ -143,22 +141,39 @@
       </extension>
       <option name="PACKAGE_NAME" value="uy.edu.um.prog2.ad.tads.tree.binary.search" />
       <option name="MAIN_CLASS_NAME" value="uy.edu.um.prog2.ad.tads.tree.binary.search.BinarySearchingTreeImplTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="METHOD_NAME" value="testInsertAndFind" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HeapImplTest.deleteTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="grupo8-p2-tads" />
+    <configuration name="BinarySearchingTreeImplTest.testTreeString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Entregable" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="uy.edu.um.prog2.ad.tads.heap.binary_array.*" />
+          <option name="PATTERN" value="uy.edu.um.prog2.ad.tads.tree.binary.search.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="uy.edu.um.prog2.ad.tads.heap.binary_array" />
-      <option name="MAIN_CLASS_NAME" value="uy.edu.um.prog2.ad.tads.heap.binary_array.HeapImplTest" />
-      <option name="METHOD_NAME" value="deleteTest" />
+      <option name="PACKAGE_NAME" value="uy.edu.um.prog2.ad.tads.tree.binary.search" />
+      <option name="MAIN_CLASS_NAME" value="uy.edu.um.prog2.ad.tads.tree.binary.search.BinarySearchingTreeImplTest" />
+      <option name="METHOD_NAME" value="testTreeString" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MyHeapImpTest.testConstructorWithGivenCapacity" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Entregable" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="uy.edu.um.prog2.ad.tads.heap.array_heap.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="uy.edu.um.prog2.ad.tads.heap.array_heap" />
+      <option name="MAIN_CLASS_NAME" value="uy.edu.um.prog2.ad.tads.heap.array_heap.MyHeapImpTest" />
+      <option name="METHOD_NAME" value="testConstructorWithGivenCapacity" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -174,18 +189,18 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.HeapImplTest.deleteTest" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.BinarySearchingTreeImplTest.testTreeString" />
+        <item itemvalue="JUnit.BinarySearchingTreeImplTest.testInsertAndFind" />
+        <item itemvalue="JUnit.MyHeapImpTest.testConstructorWithGivenCapacity" />
         <item itemvalue="JUnit.java in Entregable" />
-        <item itemvalue="JUnit.BinarySearchingTreeImplTest" />
-        <item itemvalue="JUnit.BSTImplTest.deleteTest" />
-        <item itemvalue="JUnit.BSTImplTest.find" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="97f2e755-051c-4c44-82d7-aa6c0df09525" name="Changes" comment="listo" />
+      <changelist id="97f2e755-051c-4c44-82d7-aa6c0df09525" name="Changes" comment="Se cambio el nombre de los package y se ordeno las carpetas." />
       <created>1685668088864</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -193,7 +208,9 @@
       <workItem from="1685668090365" duration="53984000" />
       <workItem from="1685903207318" duration="520000" />
       <workItem from="1686016162062" duration="13182000" />
-      <workItem from="1686084663873" duration="1373000" />
+      <workItem from="1686094446308" duration="554000" />
+      <workItem from="1686096664139" duration="9420000" />
+      <workItem from="1686112261679" duration="7802000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1685893643832</created>
@@ -209,21 +226,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686071150028</updated>
     </task>
-    <task id="LOCAL-00003" summary="listo">
-      <created>1686075013564</created>
+    <task id="LOCAL-00003" summary="Se cambio el nombre de los package y se ordeno las carpetas.">
+      <created>1686073806241</created>
       <option name="number" value="00003" />
       <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
-      <updated>1686075013564</updated>
+      <updated>1686073806241</updated>
     </task>
-    <task id="LOCAL-00004" summary="listo">
-      <created>1686085298862</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1686085298863</updated>
-    </task>
-    <option name="localTasksCounter" value="5" />
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -244,28 +254,22 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="First commit" />
     <MESSAGE value="Added binary search tree" />
-    <MESSAGE value="hola santi" />
-    <MESSAGE value="listo" />
-    <option name="LAST_COMMIT_MESSAGE" value="listo" />
+    <MESSAGE value="Se cambio el nombre de los package y se ordeno las carpetas." />
+    <option name="LAST_COMMIT_MESSAGE" value="Se cambio el nombre de los package y se ordeno las carpetas." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/uy/edu/um/prog2/ad/CsvUtils.java</url>
-          <line>106</line>
-          <option name="timeStamp" value="59" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/uy/edu/um/prog2/ad/CsvUtils.java</url>
-          <line>78</line>
-          <option name="timeStamp" value="60" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-field">
           <url>file://$PROJECT_DIR$/src/main/java/uy/edu/um/prog2/ad/tads/heap/binary_node/Node.java</url>
           <line>3</line>
           <properties field="value" class="uy.edu.um.prog2.ad.tads.heap.binary_node.Node" />
           <option name="timeStamp" value="78" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/uy/edu/um/prog2/ad/tads/tree/binary/search/BinarySearchingTreeImplTest.java</url>
+          <line>20</line>
+          <option name="timeStamp" value="83" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

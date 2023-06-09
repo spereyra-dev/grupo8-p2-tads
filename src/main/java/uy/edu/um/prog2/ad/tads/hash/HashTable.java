@@ -1,5 +1,7 @@
 package uy.edu.um.prog2.ad.tads.hash;
 
+import java.util.Enumeration;
+
 public interface HashTable<K, V> {
     void put(K key, V value);
 
@@ -12,4 +14,8 @@ public interface HashTable<K, V> {
     int size();
 
     boolean isEmpty();
+
+    V getOrDefault(K key, V defaultValue);
+
+    Enumeration<K> keys();
 }

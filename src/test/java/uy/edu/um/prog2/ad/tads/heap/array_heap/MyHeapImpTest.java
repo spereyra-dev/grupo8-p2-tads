@@ -85,4 +85,15 @@ class MyHeapImpTest {
             assertEquals("The heap is full", e.getMessage());
         }
     }
+
+    @Test
+    void testConstructorWithGivenCapacity() throws FullHeapException {
+        MyHeapImp<Integer> heap = new MyHeapImp<>(true, 5);
+        heap.add(5);
+        heap.add(5);
+        heap.add(5);
+        heap.add(5);
+        heap.add(5);
+        assertThrows(FullHeapException.class, () -> heap.add(5));
+    }
 }

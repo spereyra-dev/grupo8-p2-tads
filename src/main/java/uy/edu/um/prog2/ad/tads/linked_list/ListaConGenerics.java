@@ -11,6 +11,8 @@ public interface ListaConGenerics<T> {
 
     T get(int position);
 
+    T get(T value);
+
     boolean contains(T value);
 
     Integer size();
