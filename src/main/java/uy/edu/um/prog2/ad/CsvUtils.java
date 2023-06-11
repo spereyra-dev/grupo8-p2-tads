@@ -15,6 +15,7 @@ import uy.edu.um.prog2.ad.entities.HashTag;
 import uy.edu.um.prog2.ad.entities.Tweet;
 import uy.edu.um.prog2.ad.entities.User;
 import uy.edu.um.prog2.ad.exception.FileNotValidException;
+import uy.edu.um.prog2.ad.tads.hash.HashTable;
 import uy.edu.um.prog2.ad.tads.hash.table.MyHashTable;
 import uy.edu.um.prog2.ad.tads.linked_list.ListaConGenerics;
 import uy.edu.um.prog2.ad.tads.linked_list.simple.LinkedList;
@@ -223,8 +224,33 @@ public class CsvUtils {
      */
     public static void getTopTenPilots(int month, int year) {
         getDriversFromFile();
-        //todo regalo para Alexia
+        HashTable<String,Integer> driversMentions= new MyHashTable<>();
+        LinkedList<Tweet> filteredTweets=filterTweetsByDate(month,year);
+
+        for (Tweet tweet: filteredTweets){
+            for (String pilot:driversLinkedList){
+                driversMentions.put(pilot,driversMentions.getOrDefault(pilot,0)+1);
+            }
+        }
+        //Ordenar los pilotos
+        //Imprimir los resultados
     }
+
+    public static LinkedList<Tweet> filterTweetsByDate(int month, int year){
+        LinkedList<Tweet> filteredList = new LinkedList<>();
+
+        for (Tweet tweet : tweetLinkedList){
+           LocalDateTime fecha=tweet.getDate();
+           int mes=fecha.getMonthValue();
+           int ano=fecha.getYear();
+
+           if (mes==month && ano==year){
+               filteredList.add(tweet);
+           }
+        }
+        return filteredList;
+    }
+
 
     public static LocalDateTime parseDateTime(String dateString) {
         try {
