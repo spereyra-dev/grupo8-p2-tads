@@ -13,7 +13,11 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        long loadStartTime = System.currentTimeMillis();
         CsvUtils.getCsvInfo();
+        long loadEndTime = System.currentTimeMillis();
+        long loadTime = loadEndTime - loadStartTime;
+        System.out.println("Tiempo de carga csv: " + loadTime + " ms");
         Scanner scanner = new Scanner(System.in);
         boolean exit = false;
         while (!exit) {
@@ -55,13 +59,22 @@ public class Main {
         System.out.println("Generando Reporte 1...");
         int month = 11;
         int year = 2021;
+
+        long loadStartTime = System.currentTimeMillis();
         getTopTenPilots(month, year);
+        long loadEndTime = System.currentTimeMillis();
+        long loadTime = loadEndTime - loadStartTime;
+        System.out.println("Tiempo de carga: " + loadTime + " ms");
     }
 
     private static void generarReporte2() {
         // Código para generar el Reporte 2
         System.out.println("Generando Reporte 2...");
+        long loadStartTime = System.currentTimeMillis();
         top15UsersWithMoreTweets();
+        long loadEndTime = System.currentTimeMillis();
+        long loadTime = loadEndTime - loadStartTime;
+        System.out.println("Tiempo de carga: " + loadTime + " ms");
     }
 
 
@@ -69,27 +82,43 @@ public class Main {
         // Código para generar el Reporte 3
         System.out.println("Generando Reporte 3...");
         LocalDate date = LocalDate.of(2021, 12, 12);
+        long loadStartTime = System.currentTimeMillis();
         differentHashTagsForADay(date);
+        long loadEndTime = System.currentTimeMillis();
+        long loadTime = loadEndTime - loadStartTime;
+        System.out.println("Tiempo de carga: " + loadTime + " ms");
     }
 
     private static void generarReporte4() {
         // Código para generar el Reporte 4
         System.out.println("Generando Reporte 4...");
         LocalDate date = LocalDate.of(2021, 12, 12);
+        long loadStartTime = System.currentTimeMillis();
         mostUsedHashTagForADay(date);
+        long loadEndTime = System.currentTimeMillis();
+        long loadTime = loadEndTime - loadStartTime;
+        System.out.println("Tiempo de carga: " + loadTime + " ms");
     }
 
     private static void generarReporte5() {
         // Código para generar el Reporte 5
         System.out.println("Generando Reporte 5...");
+        long loadStartTime = System.currentTimeMillis();
         top7UsersWithMoreFavourites();
+        long loadEndTime = System.currentTimeMillis();
+        long loadTime = loadEndTime - loadStartTime;
+        System.out.println("Tiempo de carga: " + loadTime + " ms");
     }
 
     private static void generarReporte6() {
         // Código para generar el Reporte 6
         System.out.println("Generando Reporte 6...");
         String frase = "MexicoGP";
+        long loadStartTime = System.currentTimeMillis();
         tweetsWithSpecificWordOrPhrase(frase);
+        long loadEndTime = System.currentTimeMillis();
+        long loadTime = loadEndTime - loadStartTime;
+        System.out.println("Tiempo de carga: " + loadTime + " ms");
     }
 
 }
