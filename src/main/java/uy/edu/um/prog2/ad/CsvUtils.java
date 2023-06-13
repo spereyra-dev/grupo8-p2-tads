@@ -17,7 +17,6 @@ import uy.edu.um.prog2.ad.entities.User;
 import uy.edu.um.prog2.ad.exception.FileNotValidException;
 import uy.edu.um.prog2.ad.tads.hash.HashTable;
 import uy.edu.um.prog2.ad.tads.hash.table.MyHashTable;
-import uy.edu.um.prog2.ad.tads.linked_list.Lista;
 import uy.edu.um.prog2.ad.tads.linked_list.ListaConGenerics;
 import uy.edu.um.prog2.ad.tads.linked_list.simple.LinkedList;
 
@@ -31,7 +30,7 @@ public class CsvUtils {
     private static final String FILE_ERROR_FORMAT = "Wrong format in the file";
     private static final DateTimeFormatter FORMATTER_1 = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
     private static final DateTimeFormatter FORMATTER_2 = DateTimeFormatter.ofPattern("yyyy-MM-dd H:mm:ss");
-    private static final String csvFile = "src/main/resources/datasetSanti.csv";
+    private static final String csvFile = "src/main/resources/f1_dataset_test.csv";
     private static final String driversFile = "src/main/resources/drivers.txt";
     private static final ListaConGenerics<User> userLinkedList = new LinkedList<>();
     private static final ListaConGenerics<Tweet> tweetLinkedList = new LinkedList<>();
@@ -152,7 +151,6 @@ public class CsvUtils {
     en el formato YYYY-MM-DD
      */
     public static void mostUsedHashTagForADay(LocalDate date) {
-        //todo Ale revisa esto, porque la hashtable tiene un size por defecto al ser array.
         MyHashTable<String, Integer> hashTagHashTable = new MyHashTable<>();
 
         for (int i = 0; i < tweetLinkedList.size(); i++) {
@@ -245,9 +243,12 @@ public class CsvUtils {
         LinkedList<Tweet> filteredTweets=filterTweetsByDate(month,year);
 
         for (int i = 0; i < filteredTweets.size(); i++){
-            for (int j = 0; j < driversLinkedList.size(); j++){
+            for (int j = 0; j < driversLinkedList.size(); j++) {
                 String pilot = driversLinkedList.get(j);
-                driversMentions.put(pilot,driversMentions.getOrDefault(pilot,0)+1);
+                driversMentions.put(pilot, driversMentions.getOrDefault(pilot, 0));
+                if (filteredTweets.get(i).getContent().contains(pilot)) {
+                    driversMentions.put(pilot, driversMentions.get(pilot) + 1);
+                }
             }
         }
         LinkedList<String> top10 = new LinkedList<>();
@@ -265,7 +266,7 @@ public class CsvUtils {
                     }
                 }
             }
-            System.out.println(i + "- " + pilotoTop + ": con" + max + " menciones");
+            System.out.println(i + 1 + "- " + pilotoTop + ": con " + max + " menciones");
             top10.add(pilotoTop); //Santi, se necesita una lista?
             driversMentions.remove(pilotoTop);
         }
