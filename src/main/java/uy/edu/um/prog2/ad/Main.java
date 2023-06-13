@@ -13,11 +13,11 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        Runtime rt = Runtime.getRuntime();
+        long total_mem = rt.totalMemory();
         long loadStartTime = System.currentTimeMillis();
         CsvUtils.getCsvInfo();
-        long loadEndTime = System.currentTimeMillis();
-        long loadTime = loadEndTime - loadStartTime;
-        System.out.println("Tiempo de carga csv: " + loadTime + " ms");
+        measureMemoryAndTime(rt, total_mem, loadStartTime);
         Scanner scanner = new Scanner(System.in);
         boolean exit = false;
         while (!exit) {
@@ -35,11 +35,11 @@ public class Main {
 
             // Leer la opción del usuario
             System.out.print("Ingrese el número de opción: ");
-            int opcion = scanner.nextInt();
+            int option = scanner.nextInt();
             scanner.nextLine(); // Limpiar el buffer
 
             // Realizar acción según la opción seleccionada
-            switch (opcion) {
+            switch (option) {
                 case 1 -> generarReporte1();
                 case 2 -> generarReporte2();
                 case 3 -> generarReporte3();
@@ -57,24 +57,24 @@ public class Main {
     private static void generarReporte1() {
         // Código para generar el Reporte 1
         System.out.println("Generando Reporte 1...");
-        int month = 11;
+        int month = 12;
         int year = 2021;
 
+        Runtime rt = Runtime.getRuntime();
+        long total_mem = rt.totalMemory();
         long loadStartTime = System.currentTimeMillis();
         getTopTenPilots(month, year);
-        long loadEndTime = System.currentTimeMillis();
-        long loadTime = loadEndTime - loadStartTime;
-        System.out.println("Tiempo de carga: " + loadTime + " ms");
+        measureMemoryAndTime(rt, total_mem, loadStartTime);
     }
 
     private static void generarReporte2() {
         // Código para generar el Reporte 2
         System.out.println("Generando Reporte 2...");
+        Runtime rt = Runtime.getRuntime();
+        long total_mem = rt.totalMemory();
         long loadStartTime = System.currentTimeMillis();
         top15UsersWithMoreTweets();
-        long loadEndTime = System.currentTimeMillis();
-        long loadTime = loadEndTime - loadStartTime;
-        System.out.println("Tiempo de carga: " + loadTime + " ms");
+        measureMemoryAndTime(rt, total_mem, loadStartTime);
     }
 
 
@@ -82,43 +82,52 @@ public class Main {
         // Código para generar el Reporte 3
         System.out.println("Generando Reporte 3...");
         LocalDate date = LocalDate.of(2021, 12, 12);
+        Runtime rt = Runtime.getRuntime();
+        long total_mem = rt.totalMemory();
         long loadStartTime = System.currentTimeMillis();
         differentHashTagsForADay(date);
-        long loadEndTime = System.currentTimeMillis();
-        long loadTime = loadEndTime - loadStartTime;
-        System.out.println("Tiempo de carga: " + loadTime + " ms");
+        measureMemoryAndTime(rt, total_mem, loadStartTime);
     }
 
     private static void generarReporte4() {
         // Código para generar el Reporte 4
         System.out.println("Generando Reporte 4...");
         LocalDate date = LocalDate.of(2021, 12, 12);
+        Runtime rt = Runtime.getRuntime();
+        long total_mem = rt.totalMemory();
         long loadStartTime = System.currentTimeMillis();
         mostUsedHashTagForADay(date);
-        long loadEndTime = System.currentTimeMillis();
-        long loadTime = loadEndTime - loadStartTime;
-        System.out.println("Tiempo de carga: " + loadTime + " ms");
+        measureMemoryAndTime(rt, total_mem, loadStartTime);
     }
 
     private static void generarReporte5() {
         // Código para generar el Reporte 5
         System.out.println("Generando Reporte 5...");
+        Runtime rt = Runtime.getRuntime();
+        long total_mem = rt.totalMemory();
         long loadStartTime = System.currentTimeMillis();
         top7UsersWithMoreFavourites();
-        long loadEndTime = System.currentTimeMillis();
-        long loadTime = loadEndTime - loadStartTime;
-        System.out.println("Tiempo de carga: " + loadTime + " ms");
+        measureMemoryAndTime(rt, total_mem, loadStartTime);
     }
 
     private static void generarReporte6() {
         // Código para generar el Reporte 6
         System.out.println("Generando Reporte 6...");
         String frase = "MexicoGP";
+        Runtime rt = Runtime.getRuntime();
+        long total_mem = rt.totalMemory();
         long loadStartTime = System.currentTimeMillis();
         tweetsWithSpecificWordOrPhrase(frase);
+        measureMemoryAndTime(rt, total_mem, loadStartTime);
+    }
+
+    private static void measureMemoryAndTime(Runtime rt, long total_mem, long loadStartTime) {
+        long free_mem = rt.freeMemory();
+        long used_mem = total_mem - free_mem;
         long loadEndTime = System.currentTimeMillis();
         long loadTime = loadEndTime - loadStartTime;
         System.out.println("Tiempo de carga: " + loadTime + " ms");
+        System.out.println("Memoria usada: " + used_mem / 1000000 + " megabytes");
     }
 
 }
