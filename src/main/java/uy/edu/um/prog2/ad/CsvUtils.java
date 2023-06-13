@@ -152,12 +152,12 @@ public class CsvUtils {
     en el formato YYYY-MM-DD
      */
     public static void mostUsedHashTagForADay(LocalDate date) {
-        //todo Ale revisa esto, porque la hashtable tiene un size por defecto al ser array.
         MyHashTable<String, Integer> hashTagHashTable = new MyHashTable<>();
 
         for (int i = 0; i < tweetLinkedList.size(); i++) {
             Tweet tweet = tweetLinkedList.get(i);
             LocalDate tweetDate = tweet.getDate().toLocalDate();
+
 
             if (tweetDate.equals(date) && tweet.getHashTags() != null) {
                 String[] hashTagsSplit = tweet.getHashTags().getText().replaceAll("[\\[\\]' ]", "").split(",");
