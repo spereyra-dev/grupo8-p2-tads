@@ -36,6 +36,7 @@ public class MyHashTable<K, V> implements HashTable<K, V> {
             HashNode<K, V> existingNode = bucket.getNode(key);
             existingNode.setValue(value);
         } else {
+            //capaz aca podemos poner una especie de resize
             bucket.add(new HashNode<>(key, value));
         }
     }
