@@ -8,11 +8,25 @@ import uy.edu.um.prog2.ad.tads.hash.linked_list.HashLinkedList;
 
 public class MyHashTable<K, V> implements HashTable<K, V> {
 
+    private static final float DEFAULT_LOAD_FACTOR = 0.75f;
+    private static final int DEFAULT_SIZE = 16;
+
     HashLinkedList<K, V>[] buckets;
     int size;
+    float loadFactor;
 
     public MyHashTable(int size) {
         this.size = size;
+        this.loadFactor = DEFAULT_LOAD_FACTOR;
+        buckets = (HashLinkedList<K, V>[]) new HashLinkedList[size];
+        for (int i = 0; i < size; i++) {
+            buckets[i] = new HashLinkedList<>();
+        }
+    }
+
+    public MyHashTable(int size, float loadFactor) {
+        this.size = size;
+        this.loadFactor = loadFactor;
         buckets = (HashLinkedList<K, V>[]) new HashLinkedList[size];
         for (int i = 0; i < size; i++) {
             buckets[i] = new HashLinkedList<>();
@@ -20,7 +34,7 @@ public class MyHashTable<K, V> implements HashTable<K, V> {
     }
 
     public MyHashTable() {
-        this(1000); // Tamaño predeterminado de 10
+        this(DEFAULT_SIZE, DEFAULT_LOAD_FACTOR);
     }
 
     public int hashCode(K key) {
@@ -36,8 +50,10 @@ public class MyHashTable<K, V> implements HashTable<K, V> {
             HashNode<K, V> existingNode = bucket.getNode(key);
             existingNode.setValue(value);
         } else {
-            //capaz aca podemos poner una especie de resize
             bucket.add(new HashNode<>(key, value));
+            if ((float) size() / size > loadFactor) {
+                resize();
+            }
         }
     }
 
@@ -137,6 +153,26 @@ public class MyHashTable<K, V> implements HashTable<K, V> {
                 return key;
             }
         };
+    }
+
+    private void resize() {
+        int newSize = size * 2; // Puedes ajustar el factor de redimensionamiento según tus necesidades
+        HashLinkedList<K, V>[] newBuckets = (HashLinkedList<K, V>[]) new HashLinkedList[newSize];
+        for (int i = 0; i < newSize; i++) {
+            newBuckets[i] = new HashLinkedList<>();
+        }
+
+        Enumeration<K> keys = keys();
+        while (keys.hasMoreElements()) {
+            K key = keys.nextElement();
+            V value = get(key);
+            int code = key.hashCode();
+            int index = Math.abs(code) % newSize;
+            newBuckets[index].add(new HashNode<>(key, value));
+        }
+
+        size = newSize;
+        buckets = newBuckets;
     }
 
 }
