@@ -17,7 +17,7 @@ Las fechas fueron ingresadas utilizando el tipo de dato DateTime.
 
 1- Reporte 1:
 Llama a la función top15UsersWithMoreTweets().
-Esta, crea una linked lista llamada "topUsers" donde se van a guardar aquellos usuarios que tengan más tweets.
+Esta, crea una linked list llamada "topUsers" donde se van a guardar aquellos usuarios que tengan más tweets.
 Se recorre una linked list de los usuarios, comparando su cantidad de tweets con aquellos que se encuentran en la lista topUsers. Cuando encuentra uno donde la cantidad de tweets del usuario evaluado es mayor a la cantidad del que forma parte del top 15, lo agrega ahi; esto hace que queden ordenados.
 
 En un principio, a los primeros 15 usuarios evaluados se los agrega directamente a topUsers.
