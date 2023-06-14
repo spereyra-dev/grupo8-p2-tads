@@ -182,6 +182,7 @@ public class CsvUtils {
             Tweet tweet = tweetLinkedList.get(i);
             LocalDate tweetDate = tweet.getDate().toLocalDate();
 
+
             if (tweetDate.equals(date) && tweet.getHashTags() != null) {
                 String[] hashTagsSplit = tweet.getHashTags().getText().replaceAll("[\\[\\]' ]", "").split(",");
 
