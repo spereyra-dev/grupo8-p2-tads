@@ -26,3 +26,6 @@ Cuando la lista de topUsers tiene más de 15 users, se elimina el último, que a
 Cuando termina de recorrer todos los usuarios, imprime los resultados obtenidos en topUsers.
 
 2- Reporte 2:
+Llama a la función differentHashTagsForADay(LocalDate date).
+
+
