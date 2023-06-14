@@ -23,10 +23,11 @@ public class User {
     private Double userFavourites;
     private Boolean isVerified;
     private Integer tweetCount;
+    private LocalDateTime lastTweet;
 
     public User() {
         this.tweets = new LinkedList<>();
-        tweetCount = 0;
+        this.tweetCount = 0;
     }
 
     @Override
@@ -51,6 +52,7 @@ public class User {
                 ", userFavourites=" + userFavourites +
                 ", isVerified=" + isVerified +
                 ", tweetCount=" + tweetCount +
+                ", lastTweet=" + lastTweet +
                 '}';
     }
 

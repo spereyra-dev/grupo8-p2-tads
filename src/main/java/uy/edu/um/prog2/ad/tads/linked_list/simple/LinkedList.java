@@ -1,8 +1,7 @@
 package uy.edu.um.prog2.ad.tads.linked_list.simple;
 
-import uy.edu.um.prog2.ad.tads.linked_list.ListaConGenerics;
-
 import java.util.Comparator;
+import uy.edu.um.prog2.ad.tads.linked_list.ListaConGenerics;
 
 public class LinkedList<T> implements ListaConGenerics<T> {
     private Nodo<T> head;
@@ -24,6 +23,27 @@ public class LinkedList<T> implements ListaConGenerics<T> {
                 current = current.next;
             }
             current.next = newNode;
+        }
+        this.size++;
+    }
+
+    public void add(int position, T value) {
+        if (position < 0 || position > this.size) {
+            throw new IndexOutOfBoundsException("Posición inválida");
+        }
+        Nodo<T> newNode = new Nodo<>(value);
+        if (position == 0) {
+            newNode.next = this.head;
+            this.head = newNode;
+        } else {
+            Nodo<T> previous = this.head;
+            Nodo<T> current = this.head.next;
+            for (int i = 1; i < position; i++) {
+                previous = current;
+                current = current.next;
+            }
+            previous.next = newNode;
+            newNode.next = current;
         }
         this.size++;
     }
