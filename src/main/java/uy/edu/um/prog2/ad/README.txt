@@ -27,5 +27,11 @@ Cuando termina de recorrer todos los usuarios, imprime los resultados obtenidos 
 
 2- Reporte 2:
 Llama a la función differentHashTagsForADay(LocalDate date).
+Primero, crea una lista donde los diferentes hashtags se van a guardar.
+Se recorre la lista de tweets, filtrandolos por fecha.
+Aquellos que corresponden al día ingresado:
+- chequea que no sea igual a ningún hashtag que ya este en la lista de hashtags
+- si no está, lo agrega.
 
+Una vez que termina, imprime los resultados.
 
