@@ -17,6 +17,7 @@ Las fechas fueron ingresadas utilizando el tipo de dato DateTime.
 
 1- Reporte 1:
 Llama a la función top15UsersWithMoreTweets().
+
 Esta, crea una linked list llamada "topUsers" donde se van a guardar aquellos usuarios que tengan más tweets.
 Se recorre una linked list de los usuarios, comparando su cantidad de tweets con aquellos que se encuentran en la lista topUsers. Cuando encuentra uno donde la cantidad de tweets del usuario evaluado es mayor a la cantidad del que forma parte del top 15, lo agrega ahi; esto hace que queden ordenados.
 
@@ -27,11 +28,28 @@ Cuando termina de recorrer todos los usuarios, imprime los resultados obtenidos 
 
 2- Reporte 2:
 Llama a la función differentHashTagsForADay(LocalDate date).
+
 Primero, crea una lista donde los diferentes hashtags se van a guardar.
-Se recorre la lista de tweets, filtrandolos por fecha.
+Se recorre la lista de tweets, filtrándolos por fecha.
 Aquellos que corresponden al día ingresado:
 - chequea que no sea igual a ningún hashtag que ya este en la lista de hashtags
 - si no está, lo agrega.
 
 Una vez que termina, imprime los resultados.
+
+3- Reporte 3:
+Llama a la función mostUsedHashTagForADay(LocalDate date).
+
+La función crea una HashTable llamada hashTagHashTable, donde se van a guardar los String hashtags(key) y las veces que este se repite(value).
+Se recorre la lista de tweets para filtrarlos por fecha.
+Si la fecha del tweet es la correcta, se verifica si los hashtags que este contiene ya existe en la hashtable.
+Si no existen, se los agrega. (ignorando f1)
+Si ya existen, les suma 1 a su value.
+
+Para encontrar el hashtag más utilizado (el de mayor value) se utiliza la interfaz de Enumeration para las keys de la hashtable de los hashtags.
+
+
+
+
+
 
