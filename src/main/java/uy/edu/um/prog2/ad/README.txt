@@ -46,7 +46,11 @@ Si la fecha del tweet es la correcta, se verifica si los hashtags que este conti
 Si no existen, se los agrega. (ignorando f1)
 Si ya existen, les suma 1 a su value.
 
-Para encontrar el hashtag más utilizado (el de mayor value) se utiliza la interfaz de Enumeration para las keys de la hashtable de los hashtags.
+Para encontrar el hashtag más utilizado (el de mayor value) se utiliza la interfaz de Enumeration para las keys de la hashtable.
+Se busca el máximo valor del value comparándolo con el máximo actual (se actualiza mientras se va recorriendo las diferentes keys.
+Al final se imprimen los resultados.
+
+4- Reporte 4:
 
 
 
