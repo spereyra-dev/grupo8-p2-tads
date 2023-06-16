@@ -1,12 +1,4 @@
-1. Diagrama UML de clases de la solución.
-2. Breve descripción de los procesos de carga y realización de reportes.
-3. Medición de eficiencia de la aplicación. Para ello se deberá indicar, tanto para la
-carga como para la ejecución de los reportes:
-a. Cantidad de memoria RAM consumida
-b. Tiempo de ejecución promedio.
 
-un archivo README.txt describiendo los procesos de carga, las decisiones tomadas
-y el consumo de memoria en cada reporte.
 
 ----BREVE DESCRIPCIÓN DE LAS FUNCIONES----
 
@@ -72,6 +64,46 @@ Esta crea una HashTable donde se ingresarán los divers como key y las veces que
 Primero, se filtra los tweets por fechas.
 Luego, si la fecha corresponde, se verifica si coincide su contenido con algun nombre de la driversLinkedList. Si esto es así, se aumenta el value de key=piloto.
 Se imprimen los primeros 10 pilotos del HashTable.
+
+---MEDICIÓN DE LA EFICIENCIA---
+
+El tiempo de ejecución de cada función y la memoria que esta ocupa, se calcula luego de la realización del reporte correspondiente.
+
+Metodología:
+        Runtime rt = Runtime.getRuntime();
+        long total_mem = rt.totalMemory();
+        long loadStartTime = System.currentTimeMillis();
+        measureMemoryAndTime(rt, total_mem, loadStartTime);
+
+Estas líneas registran el tiempo que demora la ejecución en milisegundos y la memoria total que esta ocupa.
+Estas se imprimen junto al resultado de la función.
+
+Reportes:
+
+Reporte 1:
+    Memoria:
+    Tiempo de ejecución:
+
+Reporte 2:
+    Memoria:
+    Tiempo de ejecución:
+
+Reporte 3:
+    Memoria:
+    Tiempo de ejecución:
+
+Reporte 4:
+    Memoria:
+    Tiempo de ejecución:
+
+Reporte 5:
+    Memoria:
+    Tiempo de ejecución:
+
+Reporte 6:
+    Memoria:
+    Tiempo de ejecución:
+
 
 
 
