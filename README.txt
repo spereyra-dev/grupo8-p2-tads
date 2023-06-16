@@ -78,32 +78,6 @@ Metodología:
 Estas líneas registran el tiempo que demora la ejecución en milisegundos y la memoria total que esta ocupa.
 Estas se imprimen junto al resultado de la función.
 
-Reportes:
-
-Reporte 1:
-    Memoria:
-    Tiempo de ejecución:
-
-Reporte 2:
-    Memoria:
-    Tiempo de ejecución:
-
-Reporte 3:
-    Memoria:
-    Tiempo de ejecución:
-
-Reporte 4:
-    Memoria:
-    Tiempo de ejecución:
-
-Reporte 5:
-    Memoria:
-    Tiempo de ejecución:
-
-Reporte 6:
-    Memoria:
-    Tiempo de ejecución:
-
 
 
 
