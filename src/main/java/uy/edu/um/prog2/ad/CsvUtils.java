@@ -240,22 +240,6 @@ public class CsvUtils {
         System.out.println("Cantidad de tweets con la palabra especificada " + count);
     }
 
-    public static LinkedList<Tweet> filterTweetsByDate(int month, int year){
-        LinkedList<Tweet> filteredList = new LinkedList<>();
-
-        for (int i = 0; i < tweetLinkedList.size(); i++){
-            Tweet tweet = tweetLinkedList.get(i);
-            LocalDateTime fecha=tweet.getDate();
-            int mes=fecha.getMonthValue();
-            int ano=fecha.getYear();
-
-            if (mes==month && ano==year){
-                filteredList.add(tweet);
-            }
-        }
-        return filteredList;
-    }
-
     /*
     Listar los 10 pilotos activos en la temporada 2023 más mencionados en los tweets
     en un mes (este mes será ingresado como 2 parámetros separados, mes y año, por
@@ -265,35 +249,40 @@ public class CsvUtils {
      */
     public static void getTopTenPilots(int month, int year) {
         getDriversFromFile();
-        HashTable<String,Integer> driversMentions= new MyHashTable<>();
-        LinkedList<Tweet> filteredTweets=filterTweetsByDate(month,year);
+        HashTable<String, Integer> driversMentions = new MyHashTable<>();
 
-        for (int i = 0; i < filteredTweets.size(); i++){
-            for (int j = 0; j < driversLinkedList.size(); j++) {
-                String pilot = driversLinkedList.get(j);
-                driversMentions.put(pilot, driversMentions.getOrDefault(pilot, 0));
-                if (filteredTweets.get(i).getContent().contains(pilot)) {
-                    driversMentions.put(pilot, driversMentions.get(pilot) + 1);
+        for (int i = 0; i < tweetLinkedList.size(); i++) {
+            Tweet tweet = tweetLinkedList.get(i);
+            LocalDateTime fecha = tweet.getDate();
+            int mes = fecha.getMonthValue();
+            int ano = fecha.getYear();
+            if (mes == month && ano == year) {
+                for (int j = 0; j < driversLinkedList.size(); j++) {
+                    String pilot = driversLinkedList.get(j);
+                    driversMentions.put(pilot, driversMentions.getOrDefault(pilot, 0));
+                    if (tweetLinkedList.get(i).getContent().contains(pilot)) {
+                        driversMentions.put(pilot, driversMentions.get(pilot) + 1);
+                    }
                 }
             }
         }
         LinkedList<String> top10 = new LinkedList<>();
 
-        for (int i=0; i<10;i++){
-            int max=0;
-            String pilotoTop=null;
-            for (int j=0;j<driversLinkedList.size();j++){
+        for (int i = 0; i < 10; i++) {
+            int max = 0;
+            String pilotoTop = null;
+            for (int j = 0; j < driversLinkedList.size(); j++) {
                 String pilot = driversLinkedList.get(j);
-                if (driversMentions.contains(pilot)){
+                if (driversMentions.contains(pilot)) {
                     int num = driversMentions.get(pilot);
-                    if (num>=max){
-                        max=num;
-                        pilotoTop=pilot;
+                    if (num >= max) {
+                        max = num;
+                        pilotoTop = pilot;
                     }
                 }
             }
             System.out.println(i + 1 + "- " + pilotoTop + ": con " + max + " menciones");
-            top10.add(pilotoTop); //Santi, se necesita una lista?
+            top10.add(pilotoTop);
             driversMentions.remove(pilotoTop);
         }
 
