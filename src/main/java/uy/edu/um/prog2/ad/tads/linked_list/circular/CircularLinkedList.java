@@ -1,10 +1,9 @@
 package uy.edu.um.prog2.ad.tads.linked_list.circular;
 
 
-import uy.edu.um.prog2.ad.tads.linked_list.ListaConGenerics;
-
 import java.util.Comparator;
 import java.util.NoSuchElementException;
+import uy.edu.um.prog2.ad.tads.linked_list.ListaConGenerics;
 
 public class CircularLinkedList<T extends Comparable<T>> implements ListaConGenerics<T> {
 

@@ -253,10 +253,10 @@ public class CsvUtils {
 
         for (int i = 0; i < tweetLinkedList.size(); i++) {
             Tweet tweet = tweetLinkedList.get(i);
-            LocalDateTime fecha = tweet.getDate();
-            int mes = fecha.getMonthValue();
-            int ano = fecha.getYear();
-            if (mes == month && ano == year) {
+            LocalDateTime tweetDate = tweet.getDate();
+            int dateMonthValue = tweetDate.getMonthValue();
+            int dateYear = tweetDate.getYear();
+            if (dateMonthValue == month && dateYear == year) {
                 for (int j = 0; j < driversLinkedList.size(); j++) {
                     String pilot = driversLinkedList.get(j);
                     driversMentions.put(pilot, driversMentions.getOrDefault(pilot, 0));

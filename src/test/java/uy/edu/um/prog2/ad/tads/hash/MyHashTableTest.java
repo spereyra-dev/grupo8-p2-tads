@@ -3,6 +3,7 @@ package uy.edu.um.prog2.ad.tads.hash;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import uy.edu.um.prog2.ad.tads.hash.table.MyHashTable;

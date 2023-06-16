@@ -19,7 +19,7 @@ public class MyHeapImp<T extends Comparable<T>> implements MyHeap<T> {
         this.isMax = isMax;
     }
 
-// The children of i are at 2i+1 and 2i+2
+    // The children of i are at 2i+1 and 2i+2
 // The parent of i is at (i-1)/2
     @Override
     public void add(T element) throws FullHeapException {

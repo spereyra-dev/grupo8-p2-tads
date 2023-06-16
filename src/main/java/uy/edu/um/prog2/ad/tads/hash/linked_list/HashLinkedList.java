@@ -1,9 +1,8 @@
 package uy.edu.um.prog2.ad.tads.hash.linked_list;
 
+import java.util.Comparator;
 import uy.edu.um.prog2.ad.tads.hash.HashNode;
 import uy.edu.um.prog2.ad.tads.linked_list.ListaConGenerics;
-
-import java.util.Comparator;
 
 public class HashLinkedList<K, V> implements ListaConGenerics<HashNode<K, V>> {
     private HashNode<K, V> first;

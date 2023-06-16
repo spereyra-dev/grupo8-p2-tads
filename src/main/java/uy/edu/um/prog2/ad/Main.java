@@ -21,7 +21,6 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         boolean exit = false;
         while (!exit) {
-            // Mostrar el menú
             System.out.println("==== Menú ====");
             System.out.println("1. Reporte 10 pilotos activos en la temporada 2023 más mencionados en los tweets\n" +
                     "en un mes");
@@ -33,12 +32,10 @@ public class Main {
             System.out.println("0. Salir");
             System.out.println("==============");
 
-            // Leer la opción del usuario
             System.out.print("Ingrese el número de opción: ");
             int option = scanner.nextInt();
-            scanner.nextLine(); // Limpiar el buffer
+            scanner.nextLine();
 
-            // Realizar acción según la opción seleccionada
             switch (option) {
                 case 1 -> generarReporte1();
                 case 2 -> generarReporte2();
@@ -55,10 +52,12 @@ public class Main {
     }
 
     private static void generarReporte1() {
-        // Código para generar el Reporte 1
         System.out.println("Generando Reporte 1...");
-        int month = 12;
-        int year = 2021;
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Ingrese el mes en formato mm:");
+        int month = scanner.nextInt();
+        System.out.println("Ingrese el año en formato yyyy:");
+        int year = scanner.nextInt();
 
         Runtime rt = Runtime.getRuntime();
         long total_mem = rt.totalMemory();
@@ -68,7 +67,6 @@ public class Main {
     }
 
     private static void generarReporte2() {
-        // Código para generar el Reporte 2
         System.out.println("Generando Reporte 2...");
         Runtime rt = Runtime.getRuntime();
         long total_mem = rt.totalMemory();
@@ -79,9 +77,11 @@ public class Main {
 
 
     private static void generarReporte3() {
-        // Código para generar el Reporte 3
         System.out.println("Generando Reporte 3...");
-        LocalDate date = LocalDate.of(2021, 12, 12);
+        System.out.println("Ingrese la fecha en formato yyyy-mm-dd:");
+        Scanner scanner = new Scanner(System.in);
+        String dateString = scanner.nextLine();
+        LocalDate date = LocalDate.parse(dateString);
         Runtime rt = Runtime.getRuntime();
         long total_mem = rt.totalMemory();
         long loadStartTime = System.currentTimeMillis();
@@ -90,9 +90,11 @@ public class Main {
     }
 
     private static void generarReporte4() {
-        // Código para generar el Reporte 4
         System.out.println("Generando Reporte 4...");
-        LocalDate date = LocalDate.of(2021, 12, 12);
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Ingrese la fecha en formato yyyy-mm-dd:");
+        String dateString = scanner.nextLine();
+        LocalDate date = LocalDate.parse(dateString);
         Runtime rt = Runtime.getRuntime();
         long total_mem = rt.totalMemory();
         long loadStartTime = System.currentTimeMillis();
@@ -101,7 +103,6 @@ public class Main {
     }
 
     private static void generarReporte5() {
-        // Código para generar el Reporte 5
         System.out.println("Generando Reporte 5...");
         Runtime rt = Runtime.getRuntime();
         long total_mem = rt.totalMemory();
@@ -111,9 +112,10 @@ public class Main {
     }
 
     private static void generarReporte6() {
-        // Código para generar el Reporte 6
         System.out.println("Generando Reporte 6...");
-        String frase = "MexicoGP";
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Ingrese la palabra o frase a buscar: ");
+        String frase = scanner.nextLine();
         Runtime rt = Runtime.getRuntime();
         long total_mem = rt.totalMemory();
         long loadStartTime = System.currentTimeMillis();
