@@ -51,6 +51,28 @@ Se busca el máximo valor del value comparándolo con el máximo actual (se actu
 Al final se imprimen los resultados.
 
 4- Reporte 4:
+LLama a la función top7UsersWithMoreFavourites().
+
+Esta va comparando la cantidad de favoritos de la userLinkedList
+Luego, coloca los 7 mejores en una linked list de tamaño 7
+Imprime los resultados.
+
+5- Reporte 5:
+Llama a la función tweetsWithSpecificWordOrPhrase(String wordOrPhrase).
+
+A través de un contador (que comienza en cero), se recorre toda la lista de tweets buscando esa palabra o frase.
+Para evaluar esto último, se convierte en minúscula para igualar la lectura.
+Si el tweet siendo evaluado contiene el string ingresado, el contador aumenta 1.
+Imprime la cantidad de veces que esa palabra se repite en todos los tweets.
+
+6- Reporte 6:
+Llama a la función getTopTenPilots(int month, int year).
+
+Esta crea una HashTable donde se ingresarán los divers como key y las veces que estos son mencionados en los tweets en value.
+Primero, se filtra los tweets por fechas.
+Luego, si la fecha corresponde, se verifica si coincide su contenido con algun nombre de la driversLinkedList. Si esto es así, se aumenta el value de key=piloto.
+Se imprimen los primeros 10 pilotos del HashTable.
+
 
 
 
