@@ -28,20 +28,31 @@ public class HashLinkedList<K, V> implements ListaConGenerics<HashNode<K, V>> {
 
     @Override
     public void remove(int position) {
+        if (first == null) {
+            return; // List is empty, nothing to remove
+        }
+
         if (position == 0) {
             first = first.getNext();
-        } else {
-            HashNode<K, V> current = first;
-            int size = this.size();
-            int posiciones = size - 1;
-            for (int i = 1; i <= posiciones; i++) {
-                if (i == position) {
-                    HashNode<K, V> next = current.getNext();
-                    current.setNext(next.getNext());
-                    break;
-                }
-                current = current.getNext();
+            if (first == null) {
+                last = null;
             }
+            return; // Node removed successfully
+        }
+
+        HashNode<K, V> current = first;
+        int size = this.size();
+        int posiciones = size - 1;
+        for (int i = 1; i <= posiciones; i++) {
+            if (i == position) {
+                HashNode<K, V> next = current.getNext();
+                current.setNext(next.getNext());
+                if (next == last) {
+                    last = current;
+                }
+                return; // Node removed successfully
+            }
+            current = current.getNext();
         }
     }
 
@@ -104,6 +115,9 @@ public class HashLinkedList<K, V> implements ListaConGenerics<HashNode<K, V>> {
 
     @Override
     public void remove(HashNode<K, V> node) {
+        if (node == null) {
+            return;
+        }
         if (node == first) {
             first = first.getNext();
             if (first == null) {

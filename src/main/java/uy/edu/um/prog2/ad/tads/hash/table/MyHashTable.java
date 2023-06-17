@@ -38,12 +38,18 @@ public class MyHashTable<K, V> implements HashTable<K, V> {
     }
 
     public int hashCode(K key) {
+        if (key == null) {
+            return 0;
+        }
         int hashCode = key.hashCode();
         return Math.abs(hashCode) % size;
     }
 
     @Override
     public void put(K key, V value) {
+        if (key == null) {
+            return;
+        }
         int code = hashCode(key);
         HashLinkedList<K, V> bucket = buckets[code];
         if (contains(key)) {
