@@ -54,10 +54,10 @@ public class Main {
     private static void generarReporte1() {
         System.out.println("Generando Reporte 1...");
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Ingrese el mes en formato mm:");
-        int month = scanner.nextInt();
         System.out.println("Ingrese el año en formato yyyy:");
         int year = scanner.nextInt();
+        System.out.println("Ingrese el mes en formato mm:");
+        int month = scanner.nextInt();
 
         Runtime rt = Runtime.getRuntime();
         long total_mem = rt.totalMemory();
