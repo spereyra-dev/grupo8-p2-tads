@@ -11,15 +11,15 @@ import uy.edu.um.prog2.ad.tads.linked_list.simple.LinkedList;
 @Getter
 @Setter
 @AllArgsConstructor
-public class User {
+public class User implements Comparable<User> {
     private Long id;
     private String name;
     private ListaConGenerics<Tweet> tweets;
-    private String userLocation;
-    private String userDescription;
-    private LocalDateTime userCreated;
-    private Double userFollowers;
-    private Double userFriends;
+    //    private String userLocation;
+//    private String userDescription;
+//    private LocalDateTime userCreated;
+//    private Double userFollowers;
+//    private Double userFriends;
     private Double userFavourites;
     private Boolean isVerified;
     private Integer tweetCount;
@@ -44,11 +44,6 @@ public class User {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", tweet=" + tweets.toString() +
-                ", userLocation='" + userLocation + '\'' +
-                ", userDescription='" + userDescription + '\'' +
-                ", userCreated=" + userCreated +
-                ", userFollowers=" + userFollowers +
-                ", userFriends=" + userFriends +
                 ", userFavourites=" + userFavourites +
                 ", isVerified=" + isVerified +
                 ", tweetCount=" + tweetCount +
@@ -58,5 +53,10 @@ public class User {
 
     public void incrementTweetCount() {
         this.tweetCount++;
+    }
+
+    @Override
+    public int compareTo(User o) {
+        return this.tweetCount.compareTo(o.tweetCount);
     }
 }

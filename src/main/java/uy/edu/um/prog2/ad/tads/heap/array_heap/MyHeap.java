@@ -2,9 +2,11 @@ package uy.edu.um.prog2.ad.tads.heap.array_heap;
 
 public interface MyHeap<T extends Comparable<T>> {
 
-    void add(T elemento) throws FullHeapException;
+    T delete();
 
-    T retrieveAndRemove() throws EmptyTreeException;
+    T get();
 
-    int getSize();
+    void insert(T element);
+
+    int size();
 }

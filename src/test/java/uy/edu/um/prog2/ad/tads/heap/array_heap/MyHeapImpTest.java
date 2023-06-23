@@ -1,100 +1,72 @@
 package uy.edu.um.prog2.ad.tads.heap.array_heap;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.junit.jupiter.api.Assertions.fail;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class MyHeapImpTest {
-    private final MyHeapImp<Integer> maxHeap = new MyHeapImp<>(true);
-    private final MyHeapImp<Integer> minHeap = new MyHeapImp<>(false);
 
-    @Test
-    void testMaxHeapAddAndRetrieveAndRemove() {
-        try {
-            maxHeap.add(5);
-            maxHeap.add(10);
-            maxHeap.add(2);
-            maxHeap.add(8);
+    private MyHeap<Integer> minHeap;
+    private MyHeap<Integer> maxHeap;
 
-            assertEquals(4, maxHeap.getSize());
-
-            assertEquals(Integer.valueOf(10), maxHeap.retrieveAndRemove());
-            assertEquals(3, maxHeap.getSize());
-
-            assertEquals(Integer.valueOf(8), maxHeap.retrieveAndRemove());
-            assertEquals(2, maxHeap.getSize());
-
-            assertEquals(Integer.valueOf(5), maxHeap.retrieveAndRemove());
-            assertEquals(1, maxHeap.getSize());
-
-            assertEquals(Integer.valueOf(2), maxHeap.retrieveAndRemove());
-            assertEquals(0, maxHeap.getSize());
-        } catch (FullHeapException | EmptyTreeException e) {
-            fail("Exception thrown: " + e.getMessage());
-        }
+    @BeforeEach
+    public void setup() {
+        minHeap = new MyHeapImp<>(true);
+        maxHeap = new MyHeapImp<>(false);
     }
 
     @Test
-    void testMinHeapAddAndRetrieveAndRemove() {
-        try {
-            minHeap.add(5);
-            minHeap.add(10);
-            minHeap.add(2);
-            minHeap.add(8);
+    public void testInsertAndGetMin() {
+        minHeap.insert(5);
+        minHeap.insert(2);
+        minHeap.insert(8);
+        minHeap.insert(1);
 
-            assertEquals(4, minHeap.getSize());
-
-            assertEquals(Integer.valueOf(2), minHeap.retrieveAndRemove());
-            assertEquals(3, minHeap.getSize());
-
-            assertEquals(Integer.valueOf(5), minHeap.retrieveAndRemove());
-            assertEquals(2, minHeap.getSize());
-
-            assertEquals(Integer.valueOf(8), minHeap.retrieveAndRemove());
-            assertEquals(1, minHeap.getSize());
-
-            assertEquals(Integer.valueOf(10), minHeap.retrieveAndRemove());
-            assertEquals(0, minHeap.getSize());
-        } catch (FullHeapException | EmptyTreeException e) {
-            fail("Exception thrown: " + e.getMessage());
-        }
+        assertEquals(1, minHeap.get());
     }
 
     @Test
-    void testEmptyHeapRetrieveAndRemove() {
-        assertThrows(EmptyTreeException.class, maxHeap::retrieveAndRemove);
+    public void testInsertAndGetMax() {
+        maxHeap.insert(5);
+        maxHeap.insert(2);
+        maxHeap.insert(8);
+        maxHeap.insert(1);
+
+        assertEquals(8, maxHeap.get());
     }
 
     @Test
-    void testFullHeapAdd() {
-        try {
-            maxHeap.add(5);
-            maxHeap.add(10);
-            maxHeap.add(2);
-            maxHeap.add(8);
-            maxHeap.add(15);
-            maxHeap.add(7);
-            maxHeap.add(12);
-            maxHeap.add(1);
-            maxHeap.add(9);
-            maxHeap.add(3);
+    public void testDeleteMin() {
+        minHeap.insert(5);
+        minHeap.insert(2);
+        minHeap.insert(8);
+        minHeap.insert(1);
 
-            assertThrows(FullHeapException.class, () -> maxHeap.add(20));
-        } catch (FullHeapException e) {
-            assertEquals("The heap is full", e.getMessage());
-        }
+        assertEquals(1, minHeap.delete());
+        assertEquals(2, minHeap.get());
     }
 
     @Test
-    void testConstructorWithGivenCapacity() throws FullHeapException {
-        MyHeapImp<Integer> heap = new MyHeapImp<>(true, 5);
-        heap.add(5);
-        heap.add(5);
-        heap.add(5);
-        heap.add(5);
-        heap.add(5);
-        assertThrows(FullHeapException.class, () -> heap.add(5));
+    public void testDeleteMax() {
+        maxHeap.insert(5);
+        maxHeap.insert(2);
+        maxHeap.insert(8);
+        maxHeap.insert(1);
+
+        assertEquals(8, maxHeap.delete());
+        assertEquals(5, maxHeap.get());
+    }
+
+    @Test
+    public void testSize() {
+        assertEquals(0, minHeap.size());
+
+        minHeap.insert(5);
+        minHeap.insert(2);
+        minHeap.insert(8);
+        minHeap.insert(1);
+
+        assertEquals(4, minHeap.size());
     }
 }
