@@ -26,17 +26,40 @@ import uy.edu.um.prog2.ad.tads.linked_list.simple.LinkedList;
  * @author Santiago Pereyra
  */
 public class CsvUtils {
-
+    private static final String driversFile = "src/main/resources/drivers.txt";
     private static final String FILE_ERROR_FORMAT = "Wrong format in the file";
     private static final DateTimeFormatter FORMATTER_1 = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
     private static final DateTimeFormatter FORMATTER_2 = DateTimeFormatter.ofPattern("yyyy-MM-dd H:mm:ss");
-    private static final String csvFile = "src/main/resources/f1_dataset_test.csv";
-    private static final String driversFile = "src/main/resources/drivers.txt";
-    private static final ListaConGenerics<User> userLinkedList = new LinkedList<>();
-    private static final ListaConGenerics<Tweet> tweetLinkedList = new LinkedList<>();
-    private static final ListaConGenerics<HashTag> hashTagLinkedList = new LinkedList<>();
+    private final ListaConGenerics<User> userLinkedList = new LinkedList<>();
+    private final ListaConGenerics<Tweet> tweetLinkedList = new LinkedList<>();
+    private final ListaConGenerics<HashTag> hashTagLinkedList = new LinkedList<>();
+    private final String csvFile;
 
-    public static ListaConGenerics<Driver> getDriversFromFile() {
+    public CsvUtils(boolean isTest) {
+        if (isTest) {
+            csvFile = "src/main/resources/f1_dataset.csv";
+        } else {
+            csvFile = "src/main/resources/f1_dataset_test.csv";
+        }
+    }
+
+    public CsvUtils() {
+        this(false);
+    }
+
+    public ListaConGenerics<User> getUserLinkedList() {
+        return userLinkedList;
+    }
+
+    public ListaConGenerics<Tweet> getTweetLinkedList() {
+        return tweetLinkedList;
+    }
+
+    public ListaConGenerics<HashTag> getHashTagLinkedList() {
+        return hashTagLinkedList;
+    }
+
+    public ListaConGenerics<Driver> getDriversFromFile() {
         ListaConGenerics<Driver> driversLinkedList = new LinkedList<>();
         try (BufferedReader br = new BufferedReader(new FileReader(driversFile))) {
             String line;
@@ -49,7 +72,7 @@ public class CsvUtils {
         return driversLinkedList;
     }
 
-    public static void getCsvInfo() {
+    public void getCsvInfo() {
         MyHashTable<String, User> userMap = new MyHashTable<>();
         MyHashTable<String, HashTag> hashtagMap = new MyHashTable<>();
         try (BufferedReader reader = new BufferedReader(new FileReader(csvFile)); CSVParser csvParser = new CSVParser(reader, CSVFormat.DEFAULT)) {
@@ -115,7 +138,7 @@ public class CsvUtils {
     tweets en orden descendente. Se espera que esta operación sea de orden n en
     notación Big O
      */
-    public static void top15UsersWithMoreTweets() {
+    public void top15UsersWithMoreTweets() {
         MyHeapImp<User> heapTop = new MyHeapImp<>(userLinkedList.size(), false);
         for (int i = 1; i < userLinkedList.size(); i++) {
             heapTop.insert(userLinkedList.get(i));
@@ -131,7 +154,7 @@ public class CsvUtils {
     Cantidad de hashtags distintos para un día dado. El día será ingresado en el formato
     YYYY-MM-DD.
      */
-    public static void differentHashTagsForADay(LocalDate date) {
+    public void differentHashTagsForADay(LocalDate date) {
         var differentHashTagsMap = new MyHashTable<String, String>();
         for (int i = 0; i < tweetLinkedList.size(); i++) {
             Tweet tweet = tweetLinkedList.get(i);
@@ -154,7 +177,7 @@ public class CsvUtils {
     Hashtag más usado para un día dado, sin tener en cuenta #f1. El día será ingresado
     en el formato YYYY-MM-DD
      */
-    public static void mostUsedHashTagForADay(LocalDate date) {
+    public void mostUsedHashTagForADay(LocalDate date) {
         MyHashTable<String, Integer> hashTagHashTable = new MyHashTable<>();
         var maxHashTag = "";
         var maxCount = 0;
@@ -183,7 +206,7 @@ public class CsvUtils {
     Top 7 cuentas con más favoritos. Para este listado se deberá retornar el nombre del
     usuario, junto con la cantidad de favoritos.
      */
-    public static void top7UsersWithMoreFavourites() {
+    public void top7UsersWithMoreFavourites() {
         userLinkedList.sort((o1, o2) -> o2.getUserFavourites().compareTo(o1.getUserFavourites()));
         int limit = Math.min(7, userLinkedList.size());
         for (int i = 0; i < limit; i++) {
@@ -195,7 +218,7 @@ public class CsvUtils {
     Cantidad de tweets con una palabra o frase específica (que será ingresado como
     parámetro).
      */
-    public static void tweetsWithSpecificWordOrPhrase(String wordOrPhrase) {
+    public void tweetsWithSpecificWordOrPhrase(String wordOrPhrase) {
         var count = 0;
         for (int i = 0; i < tweetLinkedList.size(); i++) {
             String tweetContent = tweetLinkedList.get(i).getContent();
@@ -213,7 +236,7 @@ public class CsvUtils {
     ocurrencias para cada uno de manera ordenada. Se espera que esta operación sea
     de orden n en notación Big O
      */
-    public static void getTopTenPilots(int month, int year) {
+    public void getTopTenPilots(int month, int year) {
         MyHeapImp<Driver> driverMyHeapImp = new MyHeapImp<>(false);
         var driversList = getDriversFromFile();
         for (int i = 0; i < tweetLinkedList.size(); i++) {
@@ -246,7 +269,7 @@ public class CsvUtils {
         }
     }
 
-    public static LocalDateTime parseDateTime(String dateString) {
+    public LocalDateTime parseDateTime(String dateString) {
         try {
             return LocalDateTime.parse(dateString, FORMATTER_1);
         } catch (DateTimeParseException e1) {

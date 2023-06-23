@@ -1,22 +1,16 @@
 package uy.edu.um.prog2.ad;
 
 
-import static uy.edu.um.prog2.ad.CsvUtils.differentHashTagsForADay;
-import static uy.edu.um.prog2.ad.CsvUtils.getTopTenPilots;
-import static uy.edu.um.prog2.ad.CsvUtils.mostUsedHashTagForADay;
-import static uy.edu.um.prog2.ad.CsvUtils.top15UsersWithMoreTweets;
-import static uy.edu.um.prog2.ad.CsvUtils.top7UsersWithMoreFavourites;
-import static uy.edu.um.prog2.ad.CsvUtils.tweetsWithSpecificWordOrPhrase;
-
 import java.time.LocalDate;
 import java.util.Scanner;
 
 public class Main {
+    private static final CsvUtils csvUtils = new CsvUtils();
     public static void main(String[] args) {
         Runtime rt = Runtime.getRuntime();
         long total_mem = rt.totalMemory();
         long loadStartTime = System.currentTimeMillis();
-        CsvUtils.getCsvInfo();
+        csvUtils.getCsvInfo();
         measureMemoryAndTime(rt, total_mem, loadStartTime);
         Scanner scanner = new Scanner(System.in);
         boolean exit = false;
@@ -62,7 +56,7 @@ public class Main {
         Runtime rt = Runtime.getRuntime();
         long total_mem = rt.totalMemory();
         long loadStartTime = System.currentTimeMillis();
-        getTopTenPilots(month, year);
+        csvUtils.getTopTenPilots(month, year);
         measureMemoryAndTime(rt, total_mem, loadStartTime);
     }
 
@@ -71,7 +65,7 @@ public class Main {
         Runtime rt = Runtime.getRuntime();
         long total_mem = rt.totalMemory();
         long loadStartTime = System.currentTimeMillis();
-        top15UsersWithMoreTweets();
+        csvUtils.top15UsersWithMoreTweets();
         measureMemoryAndTime(rt, total_mem, loadStartTime);
     }
 
@@ -85,7 +79,7 @@ public class Main {
         Runtime rt = Runtime.getRuntime();
         long total_mem = rt.totalMemory();
         long loadStartTime = System.currentTimeMillis();
-        differentHashTagsForADay(date);
+        csvUtils.differentHashTagsForADay(date);
         measureMemoryAndTime(rt, total_mem, loadStartTime);
     }
 
@@ -98,7 +92,7 @@ public class Main {
         Runtime rt = Runtime.getRuntime();
         long total_mem = rt.totalMemory();
         long loadStartTime = System.currentTimeMillis();
-        mostUsedHashTagForADay(date);
+        csvUtils.mostUsedHashTagForADay(date);
         measureMemoryAndTime(rt, total_mem, loadStartTime);
     }
 
@@ -107,7 +101,7 @@ public class Main {
         Runtime rt = Runtime.getRuntime();
         long total_mem = rt.totalMemory();
         long loadStartTime = System.currentTimeMillis();
-        top7UsersWithMoreFavourites();
+        csvUtils.top7UsersWithMoreFavourites();
         measureMemoryAndTime(rt, total_mem, loadStartTime);
     }
 
@@ -119,7 +113,7 @@ public class Main {
         Runtime rt = Runtime.getRuntime();
         long total_mem = rt.totalMemory();
         long loadStartTime = System.currentTimeMillis();
-        tweetsWithSpecificWordOrPhrase(frase);
+        csvUtils.tweetsWithSpecificWordOrPhrase(frase);
         measureMemoryAndTime(rt, total_mem, loadStartTime);
     }
 
