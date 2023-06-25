@@ -37,9 +37,9 @@ public class CsvUtils {
 
     public CsvUtils(boolean isTest) {
         if (isTest) {
-            csvFile = "src/main/resources/f1_dataset.csv";
+            csvFile = "src/main/resources/datasetSanti.csv";
         } else {
-            csvFile = "src/main/resources/f1_dataset_test.csv";
+            csvFile = "src/main/resources/datasetSanti.csv";
         }
     }
 
@@ -75,7 +75,8 @@ public class CsvUtils {
     public void getCsvInfo() {
         MyHashTable<String, User> userMap = new MyHashTable<>();
         MyHashTable<String, HashTag> hashtagMap = new MyHashTable<>();
-        try (BufferedReader reader = new BufferedReader(new FileReader(csvFile)); CSVParser csvParser = new CSVParser(reader, CSVFormat.DEFAULT)) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(csvFile));
+             CSVParser csvParser = new CSVParser(reader, CSVFormat.DEFAULT)) {
             csvParser.iterator().next();
             var userIdGenerated = 1L;
             var hashTagIdGenerated = 1L;
@@ -108,7 +109,8 @@ public class CsvUtils {
                         userInMap.incrementTweetCount();
                         if (date.isAfter(userInMap.getLastTweet())) {
                             userInMap.setLastTweet(date);
-                            userInMap.setIsVerified(Boolean.parseBoolean(csvRecord.get(8))); // Actualizar el estado verificado si se encuentra un tweet más reciente
+                            userInMap.setIsVerified(Boolean.parseBoolean(csvRecord.get(
+                                    8))); // Actualizar el estado verificado si se encuentra un tweet más reciente
                         }
                     } else {
                         User user = new User();
@@ -140,13 +142,14 @@ public class CsvUtils {
      */
     public void top15UsersWithMoreTweets() {
         MyHeapImp<User> heapTop = new MyHeapImp<>(userLinkedList.size(), false);
-        for (int i = 1; i < userLinkedList.size(); i++) {
+        for (int i = 0; i < userLinkedList.size(); i++) {
             heapTop.insert(userLinkedList.get(i));
         }
         for (int j = 1; j <= 15; j++) {
             User user = heapTop.delete();
             String verifiedStatus = user.getIsVerified() ? "Verificado" : "No verificado";
-            System.out.println(user.getName() + " - Tweets: " + user.getTweetCount() + " - " + verifiedStatus);
+            System.out.println(
+                    j + " - " + user.getName() + " - Tweets: " + user.getTweetCount() + " - " + verifiedStatus);
         }
     }
 
