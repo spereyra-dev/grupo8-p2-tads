@@ -15,11 +15,6 @@ public class User implements Comparable<User> {
     private Long id;
     private String name;
     private ListaConGenerics<Tweet> tweets;
-    //    private String userLocation;
-//    private String userDescription;
-//    private LocalDateTime userCreated;
-//    private Double userFollowers;
-//    private Double userFriends;
     private Double userFavourites;
     private Boolean isVerified;
     private Integer tweetCount;
