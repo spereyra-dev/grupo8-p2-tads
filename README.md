@@ -70,7 +70,7 @@ Metodología:
 
 Al implementar las funciones, se le agregan las siguientes líneas de código:
 
-```java
+```
 Scanner scanner = new Scanner(System.in);
 String dateString = scanner.nextLine();
 LocalDate date = LocalDate.parse(dateString);
