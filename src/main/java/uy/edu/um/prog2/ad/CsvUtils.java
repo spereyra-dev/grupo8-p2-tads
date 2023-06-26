@@ -39,7 +39,7 @@ public class CsvUtils {
         if (isTest) {
             csvFile = "src/main/resources/datasetSanti.csv";
         } else {
-            csvFile = "src/main/resources/f1_dataset_test.csv";
+            csvFile = "src/main/resources/f1_dataset.csv";
         }
     }
 
